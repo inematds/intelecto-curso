@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1.3 — Setup do Ambiente | INTELECTO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">INTELECTO</span></a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-2">
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10">T1 Fundamentos</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../../index.html" class="hover:text-emerald-400">Início</a><span>/</span>
+      <a href="index.html" class="hover:text-emerald-400">Trilha 1</a><span>/</span>
+      <span class="text-emerald-400">Módulo 1.3</span>
+    </div>
+  </nav>
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.3</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">⚙ Setup do Ambiente</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Do zero ao Jarvis funcionando: Python 3.11, Docker, conta OpenRouter, arquivo .env, wizard de configuração e primeira mensagem no Telegram.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">60</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Prático</div><div class="text-xs text-neutral-400">Tipo</div></div>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- T1 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+        <h2 class="text-2xl font-bold">🐍 Pré-requisitos e Python</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">O INTELECTO exige <strong class="text-emerald-400">Python 3.11+</strong> como mínimo absoluto. Versões anteriores não têm todas as features de async e tipagem que o projeto usa. As dependências são deliberadamente mínimas.</p>
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">📦 requirements.txt Minimalista</h3>
+        <div class="font-mono text-sm space-y-1 bg-dark-800 rounded-lg p-4">
+          <div class="text-emerald-400">httpx&gt;=0.27.0          <span class="text-neutral-500"># HTTP async client</span></div>
+          <div class="text-emerald-400">python-telegram-bot    <span class="text-neutral-500"># Canal Telegram</span></div>
+          <div class="text-emerald-400">cryptography           <span class="text-neutral-500"># Fernet + PBKDF2</span></div>
+          <div class="text-emerald-400">python-dotenv          <span class="text-neutral-500"># .env loader</span></div>
+          <div class="text-emerald-400">aiosqlite              <span class="text-neutral-500"># SQLite async</span></div>
+          <div class="text-neutral-500"># Nada mais. Zero frameworks.</div>
+        </div>
+      </div>
+      <div class="space-y-3 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold text-xs">1</span></div>
+          <div class="flex-1 bg-dark-800 rounded-lg p-4 border border-dark-600">
+            <p class="font-mono text-sm text-emerald-400">python3 --version</p>
+            <p class="text-xs text-neutral-500 mt-1">Deve retornar Python 3.11 ou superior</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold text-xs">2</span></div>
+          <div class="flex-1 bg-dark-800 rounded-lg p-4 border border-dark-600">
+            <p class="font-mono text-sm text-emerald-400">python3 -m venv .venv && source .venv/bin/activate</p>
+            <p class="text-xs text-neutral-500 mt-1">Sempre use venv para isolamento</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold text-xs">3</span></div>
+          <div class="flex-1 bg-dark-800 rounded-lg p-4 border border-dark-600">
+            <p class="font-mono text-sm text-emerald-400">pip install -r requirements.txt</p>
+            <p class="text-xs text-neutral-500 mt-1">Instala apenas as 5 dependências necessárias</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- T2 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+        <h2 class="text-2xl font-bold">🔑 Conta OpenRouter</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">O <strong class="text-emerald-400">OpenRouter</strong> é a escolha padrão para o INTELECTO porque resolve o problema de vendor lock-in com uma elegância cirúrgica: uma chave de API dá acesso a 100+ modelos, e mudar de modelo é apenas trocar uma string.</p>
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">🎯 Por que OpenRouter?</h3>
+        <ul class="space-y-3 text-neutral-300">
+          <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>100+ modelos:</strong> GPT-4o, Claude 3.5, Mistral, Llama 3, Gemini — todos com uma chave</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Billing unificado:</strong> Um cartão, uma fatura, visibilidade de custo por modelo</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Fallback automático:</strong> Se um modelo cair, você muda em segundos</span></li>
+          <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Interface OpenAI-compatible:</strong> O mesmo código funciona sem mudanças</span></li>
+        </ul>
+      </div>
+      <div class="space-y-3 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold text-xs">1</span></div>
+          <div class="flex-1 bg-dark-800 rounded-lg p-4 border border-dark-600"><p class="text-sm">Criar conta em <strong class="text-emerald-400">openrouter.ai</strong></p></div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold text-xs">2</span></div>
+          <div class="flex-1 bg-dark-800 rounded-lg p-4 border border-dark-600"><p class="text-sm">Ir em <strong>Keys</strong> → <strong>Create API Key</strong></p></div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold text-xs">3</span></div>
+          <div class="flex-1 bg-dark-800 rounded-lg p-4 border border-dark-600"><p class="text-sm">Copiar a chave (começa com <code class="text-emerald-400">sk-or-</code>)</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- T3 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+        <h2 class="text-2xl font-bold">📝 Configuração do .env</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">O arquivo <strong class="text-emerald-400">.env</strong> é a única fonte de configuração sensível. Nunca coloque chaves diretamente no código. O .env é carregado automaticamente pelo setup e NUNCA deve ir para o git.</p>
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+        <h3 class="text-lg font-semibold mb-4">📄 .env Exemplo Completo</h3>
+        <div class="font-mono text-sm space-y-1 bg-dark-900 rounded-lg p-4">
+          <div class="text-neutral-500"># Provedor principal</div>
+          <div class="text-emerald-400">OPENROUTER_API_KEY=sk-or-v1-...</div>
+          <div class="text-emerald-400">MODEL_NAME=anthropic/claude-3.5-sonnet</div>
+          <br/>
+          <div class="text-neutral-500"># Canal Telegram</div>
+          <div class="text-emerald-400">TELEGRAM_BOT_TOKEN=1234567890:AAF...</div>
+          <div class="text-emerald-400">TELEGRAM_ALLOWED_USERS=123456789</div>
+          <br/>
+          <div class="text-neutral-500"># Configurações do agente</div>
+          <div class="text-emerald-400">MAX_ROUNDS=5</div>
+          <div class="text-emerald-400">WORKSPACE_DIR=./workspace</div>
+          <div class="text-emerald-400">LOG_LEVEL=INFO</div>
+        </div>
+      </div>
+      <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠</span> Regra Crítica de Segurança</h3>
+        <p class="text-neutral-300">O <code class="text-red-400">.env</code> deve estar no <code>.gitignore</code>. Verifique sempre antes de fazer commit. Uma chave de API exposta no GitHub pode gerar faturas de centenas de dólares em horas — isso acontece frequentemente com bots de scan automatizados.</p>
+      </div>
+    </section>
+
+    <!-- T4 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+        <h2 class="text-2xl font-bold">🧙 O Wizard de Setup</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">O <strong class="text-emerald-400">setup.py</strong> é um wizard interativo que faz as perguntas certas e configura tudo automaticamente. Ele cria os arquivos necessários, valida as credenciais e garante que nada obrigatório seja esquecido.</p>
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4">💬 Perguntas do Wizard</h3>
+        <div class="font-mono text-sm space-y-2 bg-dark-800 rounded-lg p-4">
+          <div class="text-neutral-500">$ python setup.py</div>
+          <div class="text-emerald-400">? Qual canal usar? [telegram/discord/cli]: <span class="text-white">telegram</span></div>
+          <div class="text-emerald-400">? Usar Docker ou nativo? [docker/native]: <span class="text-white">native</span></div>
+          <div class="text-emerald-400">? Provedor de LLM? [openrouter/ollama]: <span class="text-white">openrouter</span></div>
+          <div class="text-emerald-400">? Modelo padrão?: <span class="text-white">anthropic/claude-3.5-sonnet</span></div>
+          <div class="text-emerald-400">? Nome do seu assistente?: <span class="text-white">Atlas</span></div>
+          <div class="text-neutral-500">✓ .env criado</div>
+          <div class="text-neutral-500">✓ workspace/ inicializado</div>
+          <div class="text-neutral-500">✓ ~/.intelecto/ criado</div>
+          <div class="text-neutral-500">✓ Setup completo! Execute: python main.py</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- T5 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+        <h2 class="text-2xl font-bold">🐳 Docker vs Nativo</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">A escolha entre Docker e nativo afeta seu fluxo de trabalho. Para <strong class="text-emerald-400">desenvolvimento</strong>, nativo é mais ágil. Para <strong class="text-emerald-400">produção</strong>, Docker Compose garante reprodutibilidade e facilita o monitoramento.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <h4 class="font-bold text-emerald-400 mb-3">🐍 Modo Nativo</h4>
+          <ul class="space-y-2 text-sm text-neutral-300">
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Debug instantâneo com pdb/breakpoint</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Reload automático com watchdog</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Acesso direto ao filesystem</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Depende do ambiente local</span></li>
+          </ul>
+          <div class="font-mono text-xs bg-dark-700 rounded p-2 mt-3 text-emerald-400">python main.py</div>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+          <h4 class="font-bold text-blue-400 mb-3">🐳 Modo Docker</h4>
+          <ul class="space-y-2 text-sm text-neutral-300">
+            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Isolamento total do ambiente</span></li>
+            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Deploy reproduzível em qualquer servidor</span></li>
+            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Restart automático com --restart unless-stopped</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Overhead de build e startup</span></li>
+          </ul>
+          <div class="font-mono text-xs bg-dark-700 rounded p-2 mt-3 text-blue-400">docker compose up -d</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- T6 -->
+    <section class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+        <h2 class="text-2xl font-bold">📱 Primeira Mensagem no Telegram</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">O momento de verdade. Se a primeira mensagem funcionar, <strong class="text-emerald-400">toda a stack está correta</strong>: canal conectado, provedor respondendo, memória inicializada e workspace carregado.</p>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold text-sm">1</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+            <h4 class="font-semibold mb-1">Criar Bot no BotFather</h4>
+            <p class="text-sm text-neutral-400">Abrir Telegram → BotFather → /newbot → seguir instruções → copiar o token que começa com números seguidos de <code class="text-emerald-400">:</code></p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold text-sm">2</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+            <h4 class="font-semibold mb-1">Obter seu User ID</h4>
+            <p class="text-sm text-neutral-400">Enviar /start para <strong>@userinfobot</strong> no Telegram. Copiar o número retornado e colocar em TELEGRAM_ALLOWED_USERS.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold text-sm">3</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+            <h4 class="font-semibold mb-1">Iniciar o INTELECTO</h4>
+            <p class="text-sm text-neutral-400"><code class="text-emerald-400">python main.py</code> — aguardar "Bot iniciado. Aguardando mensagens..."</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold text-sm">4</span></div>
+          <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+            <h4 class="font-semibold text-emerald-400 mb-1">Enviar "Olá" e aguardar</h4>
+            <p class="text-sm text-neutral-400">O Jarvis vai responder com sua personalidade do SOUL.md. Se responder, parabéns — você tem um Jarvis funcionando.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Smoke Test Checklist</h3>
+        <ul class="space-y-2 text-neutral-300 text-sm">
+          <li class="flex items-start space-x-2"><span class="text-primary">✓</span><span>Bot está rodando sem erros no terminal</span></li>
+          <li class="flex items-start space-x-2"><span class="text-primary">✓</span><span>Mensagem foi recebida (aparecer no log)</span></li>
+          <li class="flex items-start space-x-2"><span class="text-primary">✓</span><span>LLM foi chamado (custo no OpenRouter)</span></li>
+          <li class="flex items-start space-x-2"><span class="text-primary">✓</span><span>Resposta chegou no Telegram</span></li>
+          <li class="flex items-start space-x-2"><span class="text-primary">✓</span><span>audit.log tem o registro da interação</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Resumo -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo 1.3</h2>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Python 3.11+</strong><span class="text-neutral-400"> — 5 dependências mínimas, zero frameworks de IA</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>OpenRouter</strong><span class="text-neutral-400"> — 100+ modelos, billing unificado, sem vendor lock-in</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>.env seguro</strong><span class="text-neutral-400"> — chaves fora do código, no .gitignore obrigatório</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Wizard de setup</strong><span class="text-neutral-400"> — perguntas guiadas, configuração automática e validação</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Docker vs nativo</strong><span class="text-neutral-400"> — nativo para dev, Docker Compose para produção</span></div></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Primeira mensagem</strong><span class="text-neutral-400"> — smoke test que valida toda a stack de ponta a ponta</span></div></div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+          <h3 class="font-semibold text-emerald-400 mb-2">Próxima Trilha:</h3>
+          <p class="text-neutral-300">Trilha 2 — Identidade e Canais: SOUL.md, AIEOS, Telegram, WhatsApp e memória SQLite</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="modulo-1-2.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 1.2</a>
+          <a href="../trilha2/index.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Trilha 2: Identidade →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t border-dark-600 py-8 mt-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>INTELECTO — Módulo 1.3: Setup do Ambiente · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+    </div>
+  </footer>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { themeToggleDarkIcon.classList.remove('hidden'); html.classList.remove('dark'); }
+    else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

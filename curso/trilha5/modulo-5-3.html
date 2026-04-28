@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Módulo 5.3 — Agent Zero e Auto-Evolucao | INTELECTO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+
+  .light body { background-color: #f8fafc; color: #1e293b; }
+  .light .bg-gray-900 { background-color: #ffffff !important; }
+  .light .bg-gray-800 { background-color: #f1f5f9 !important; }
+  .light .bg-gray-700 { background-color: #e2e8f0 !important; }
+  .light .text-white { color: #1e293b !important; }
+  .light .text-gray-100 { color: #1e293b !important; }
+  .light .text-gray-200 { color: #334155 !important; }
+  .light .text-gray-300 { color: #475569 !important; }
+  .light .text-gray-400 { color: #64748b !important; }
+  .light .border-gray-700 { border-color: #e2e8f0 !important; }
+  .light .border-gray-600 { border-color: #cbd5e1 !important; }
+  .light .bg-teal-900\/30 { background-color: rgba(20,184,166,0.1) !important; }
+  .light .bg-teal-500\/10 { background-color: rgba(20,184,166,0.08) !important; }
+  .light .border-teal-500\/30 { border-color: rgba(20,184,166,0.3) !important; }
+
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+  <header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="text-gray-400 hover:text-white transition-colors text-sm">← Trilha 5</a>
+        <span class="text-gray-600">|</span>
+        <span class="text-teal-400 font-semibold">Módulo 5.3</span>
+      </div>
+      <button id="themeToggle" class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 transition-colors">☀️/🌙</button>
+    </div>
+  </header>
+
+  <div class="bg-gradient-to-br from-teal-900/40 to-gray-900 border-b border-gray-800 py-10">
+    <div class="max-w-4xl mx-auto px-4">
+      <span class="text-teal-400 text-sm font-semibold uppercase tracking-wider">Módulo 5.3</span>
+      <h1 class="text-3xl font-bold text-white mt-2 mb-3">Agent Zero e Auto-Evolucao</h1>
+      <p class="text-gray-300 text-lg">O loop ReAct avancado, auto-documentacao, meta-aprendizado e agentes que melhoram progressivamente.</p>
+    </div>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">1</span>
+        <h2 class="text-2xl font-bold text-white">O que é o Padrão Agent Zero?</h2>
+      </div>
+
+      <p class="text-gray-300 mb-4">Agent Zero é o padrão INTELECTO para sistemas que se auto-melhoram ao longo do tempo. Inclui um <strong class="text-white">meta-loop de reflexao</strong> que analisa o histórico de interacoes e atualiza as próprias estratégias.</p>
+      <div class="bg-teal-900/30 border border-teal-500/30 rounded-xl p-5 mb-4">
+        <div class="text-teal-400 font-semibold mb-3">Componentes Únicos do Agent Zero</div>
+        <div class="space-y-2 text-sm text-gray-300">
+          <div class="flex gap-3"><span class="w-32 text-teal-400 flex-shrink-0">ReflectionEngine</span>Analisa logs de interacao e extrai padrões de sucesso/falha</div>
+          <div class="flex gap-3"><span class="w-32 text-teal-400 flex-shrink-0">SoulEditor</span>Propõe mudancas controladas ao SOUL.md com aprovacao humana</div>
+          <div class="flex gap-3"><span class="w-32 text-teal-400 flex-shrink-0">ToolCreator</span>Escreve e instala novos tools em resposta a lacunas detectadas</div>
+          <div class="flex gap-3"><span class="w-32 text-teal-400 flex-shrink-0">EpisodicMemory</span>Indexa episódios relevantes para aprendizado por analogia</div>
+        </div>
+      </div>
+    </section>
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">2</span>
+        <h2 class="text-2xl font-bold text-white">Por que Construir Agentes Auto-Evolutivos?</h2>
+      </div>
+
+      <p class="text-gray-300 mb-4">Assistentes estáticos ficam obsoletos. Suas necessidades mudam, novas ferramentas surgem, e os modelos de IA evoluem. Agent Zero adapta o assistente automaticamente.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+          <div class="text-teal-400 font-semibold mb-2">Cenários de auto-evolucao</div>
+          <ul class="text-gray-300 text-sm space-y-1.5">
+            <li>· Usuário sempre pede formato específico → agente aprende automaticamente</li>
+            <li>· API externa muda → agente detecta erro e atualiza wrapper</li>
+            <li>· Novo modelo mais barato → agente migra rotas de custo</li>
+          </ul>
+        </div>
+        <div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+          <div class="text-teal-400 font-semibold mb-2">Métricas monitoradas</div>
+          <ul class="text-gray-300 text-sm space-y-1.5">
+            <li>· Taxa de satisfacão do usuário</li>
+            <li>· Número de retentativas por tarefa</li>
+            <li>· Latência média de resposta</li>
+            <li>· Custo de tokens por consulta</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">3</span>
+        <h2 class="text-2xl font-bold text-white">Loop ReAct Avancado com Reflexao</h2>
+      </div>
+
+      <p class="text-gray-300 mb-4">O loop ReAct padrao (Think → Act → Observe) é expandido no Agent Zero com uma fase de Reflexao que ocorre periodicamente.</p>
+      <div class="bg-gray-800 rounded-xl p-5 mb-4 font-mono text-sm">
+        <div class="text-gray-500 mb-2"># agent_zero.py — loop expandido</div>
+        <div class="text-blue-400">async def</div><span class="text-yellow-400"> meta_loop</span><span class="text-gray-300">(self):</span>
+        <div class="text-blue-400">&nbsp;&nbsp;while</div><span class="text-gray-300"> True:</span>
+        <div class="text-gray-300">&nbsp;&nbsp;&nbsp;&nbsp;await self.react_loop()&nbsp;&nbsp;<span class="text-gray-500"># N interacoes normais</span></div>
+        <div class="text-blue-400">&nbsp;&nbsp;&nbsp;&nbsp;if</div><span class="text-gray-300"> self.should_reflect():</span>
+        <div class="text-gray-300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;insights = await self.reflect()</div>
+        <div class="text-gray-300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proposals = await self.propose_improvements(insights)</div>
+        <div class="text-gray-300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;approved = await self.human_review(proposals)</div>
+        <div class="text-blue-400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if</div><span class="text-gray-300"> approved:</span>
+        <div class="text-gray-300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await self.apply_improvements(approved)</div>
+      </div>
+    </section>
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">4</span>
+        <h2 class="text-2xl font-bold text-white">Auto-Documentacao e SOUL.md Dinâmico</h2>
+      </div>
+
+      <p class="text-gray-300 mb-4">O SOUL.md deixa de ser um arquivo estático e torna-se um documento vivo. O Agent Zero propõe adicoes à secao "Aprendizados Recentes" após cada sessao de reflexao.</p>
+      <div class="bg-teal-900/30 border border-teal-500/30 rounded-xl p-5 mb-4">
+        <div class="text-teal-400 font-semibold mb-3">Estrutura dinâmica do SOUL.md</div>
+        <div class="font-mono text-sm text-gray-300">
+          <div class="text-gray-500"># Secoes estáticas (editadas pelo humano)</div>
+          <div>## Identidade, Valores, Restricoes</div>
+          <div class="mt-2 text-gray-500"># Secoes dinâmicas (atualizadas pelo agente)</div>
+          <div>## Aprendizados Recentes</div>
+          <div class="text-gray-400">&nbsp;&nbsp;- 2025-01-15: Usuário prefere respostas curtas</div>
+          <div class="text-gray-400">&nbsp;&nbsp;- 2025-01-18: Evitar markdown em respostas de chat</div>
+          <div>## Ferramentas Descobertas</div>
+          <div class="text-gray-400">&nbsp;&nbsp;- notion_tool.py: adicionada automaticamente</div>
+        </div>
+      </div>
+    </section>
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">5</span>
+        <h2 class="text-2xl font-bold text-white">Meta-Aprendizado com Memória Episódica</h2>
+      </div>
+
+      <p class="text-gray-300 mb-4">A memória episódica armazena <strong class="text-white">episódios completos</strong> de sucesso: o problema, a abordagem usada e o resultado. Quando um problema similar aparece, o agente recupera e adapta a solucao anterior.</p>
+      <div class="bg-gray-800 rounded-xl p-5 mb-4 font-mono text-sm">
+        <div class="text-gray-500 mb-2"># episodic_memory.py</div>
+        <div class="text-blue-400">def</div><span class="text-yellow-400"> retrieve_similar</span><span class="text-gray-300">(self, problem: str) -&gt; list:</span>
+        <div class="text-gray-300">&nbsp;&nbsp;query_emb = self.embed(problem)</div>
+        <div class="text-gray-300">&nbsp;&nbsp;results = self.db.execute(</div>
+        <div class="text-gray-300">&nbsp;&nbsp;&nbsp;&nbsp;"SELECT * FROM episodes ORDER BY "</div>
+        <div class="text-gray-300">&nbsp;&nbsp;&nbsp;&nbsp;"cosine_distance(embedding, ?) LIMIT 3",</div>
+        <div class="text-gray-300">&nbsp;&nbsp;&nbsp;&nbsp;[query_emb]</div>
+        <div class="text-gray-300">&nbsp;&nbsp;)</div>
+        <div class="text-blue-400">&nbsp;&nbsp;return</div><span class="text-gray-300"> [Episode(**r) for r in results]</span>
+      </div>
+    </section>
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">6</span>
+        <h2 class="text-2xl font-bold text-white">Limites Éticos e Controle Humano</h2>
+      </div>
+
+      <p class="text-gray-300 mb-4">Auto-evolucao sem controle é perigosa. O Agent Zero implementa salvaguardas obrigatórias que garantem que humanos permaneçam no loop para decisoes críticas.</p>
+      <div class="bg-red-900/20 border border-red-500/30 rounded-xl p-5 mb-4">
+        <div class="text-red-400 font-semibold mb-3">Operacoes que SEMPRE requerem aprovacao humana</div>
+        <ul class="text-gray-300 text-sm space-y-1">
+          <li>· Modificacoes nos valores e restricoes do SOUL.md</li>
+          <li>· Instalacao de novas dependências Python</li>
+          <li>· Adicao de ferramentas com acesso à rede ou filesystem</li>
+          <li>· Mudancas nas políticas de seguranca</li>
+        </ul>
+      </div>
+      <div class="bg-teal-900/30 border border-teal-500/30 rounded-xl p-4">
+        <div class="text-teal-400 font-semibold mb-2">Mecanismo de rollback</div>
+        <div class="text-gray-300 text-sm">Toda modificacao automática cria um snapshot versionado. Se métricas de qualidade caírem mais de 10% após uma mudanca, o rollback ocorre automaticamente e o humano é notificado.</div>
+      </div>
+    </section>
+    <div class="flex justify-start gap-3 mt-10 pt-8 border-t border-gray-800">
+      <a href="index.html" class="px-5 py-2.5 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-medium transition-colors">← Voltar à Trilha 5</a>
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-800 py-6 mt-10">
+    <div class="max-w-4xl mx-auto px-4 text-center text-sm text-gray-500">
+      Curso INTELECTO · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:underline">INEMA.CLUB</a>
+    </div>
+  </footer>
+
+  <script>
+    
+  const html = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  if (localStorage.getItem('theme') === 'light') html.classList.add('light');
+  btn.addEventListener('click', () => {
+    html.classList.toggle('light');
+    localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
+  });
+
+  </script>
+</body>
+</html>

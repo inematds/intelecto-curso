@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Módulo 6.2 — Deploy, Monitoramento e Evolucao | INTELECTO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+
+  .light body { background-color: #f8fafc; color: #1e293b; }
+  .light .bg-gray-900 { background-color: #ffffff !important; }
+  .light .bg-gray-800 { background-color: #f1f5f9 !important; }
+  .light .bg-gray-700 { background-color: #e2e8f0 !important; }
+  .light .text-white { color: #1e293b !important; }
+  .light .text-gray-100 { color: #1e293b !important; }
+  .light .text-gray-200 { color: #334155 !important; }
+  .light .text-gray-300 { color: #475569 !important; }
+  .light .text-gray-400 { color: #64748b !important; }
+  .light .border-gray-700 { border-color: #e2e8f0 !important; }
+  .light .border-gray-600 { border-color: #cbd5e1 !important; }
+  .light .bg-rose-900\/30 { background-color: rgba(244,63,94,0.1) !important; }
+  .light .bg-rose-500\/10 { background-color: rgba(244,63,94,0.08) !important; }
+  .light .border-rose-500\/30 { border-color: rgba(244,63,94,0.3) !important; }
+  .light .hover\:bg-rose-900\/30:hover { background-color: rgba(244,63,94,0.1) !important; }
+
+  </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+  <header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="text-gray-400 hover:text-white transition-colors text-sm">← Trilha 6</a>
+        <span class="text-gray-600">|</span>
+        <span class="text-rose-400 font-semibold">Módulo 6.2</span>
+      </div>
+      <button id="themeToggle" class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 transition-colors">☀️/🌙</button>
+    </div>
+  </header>
+
+  <div class="bg-gradient-to-br from-rose-900/40 to-gray-900 border-b border-gray-800 py-10">
+    <div class="max-w-4xl mx-auto px-4">
+      <span class="text-rose-400 text-sm font-semibold uppercase tracking-wider">Módulo 6.2</span>
+      <h1 class="text-3xl font-bold text-white mt-2 mb-3">Deploy, Monitoramento e Evolucao</h1>
+      <p class="text-gray-300 text-lg">Levando seu assistente para producao com deploy robusto, observabilidade e ciclo de melhoria contínua.</p>
+    </div>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">1</span>
+        <h2 class="text-2xl font-bold text-white">O que é Deploy de Assistente IA?</h2>
+      </div>
+
+      <p class="text-gray-300 mb-4">Deploy de um assistente IA é diferente de deploy de uma API REST. Você nao está apenas disponibilizando um endpoint — você está colocando um <strong class="text-white">agente autônomo em producao</strong> que toma decisoes e age em seu nome.</p>
+      <div class="bg-rose-900/30 border border-rose-500/30 rounded-xl p-5 mb-4">
+        <div class="text-rose-400 font-semibold mb-3">Diferenca: Dev vs Producao em IA</div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead><tr class="text-gray-400 border-b border-gray-700">
+              <th class="text-left py-2 pr-4">Aspecto</th>
+              <th class="text-left py-2 pr-4">Desenvolvimento</th>
+              <th class="text-left py-2">Producao</th>
+            </tr></thead>
+            <tbody class="text-gray-300">
+              <tr class="border-b border-gray-800"><td class="py-2 pr-4">Erros</td><td class="pr-4">Você vê e corrige</td><td>Usuário vê primeiro</td></tr>
+              <tr class="border-b border-gray-800"><td class="py-2 pr-4">Latência</td><td class="pr-4">Irrelevante</td><td>Crítica (&lt;3s ideal)</td></tr>
+              <tr class="border-b border-gray-800"><td class="py-2 pr-4">Custo</td><td class="pr-4">Pequeno</td><td>Pode escalar rápido</td></tr>
+              <tr><td class="py-2 pr-4">Seguranca</td><td class="pr-4">Relaxada</td><td>Sempre IronClaw</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">2</span>
+        <h2 class="text-2xl font-bold text-white">Por que Monitorar é Tao Importante?</h2>
+      </div>
+
+      <p class="text-gray-300 mb-4">Sistemas de IA sofrem de <strong class="text-white">drift</strong> — o comportamento pode mudar sutilmente ao longo do tempo por mudancas no modelo, no contexto ou nos dados. Sem monitoramento, você nao sabe quando o assistente começou a errar.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+          <div class="text-rose-400 font-semibold mb-2">Causas comuns de degradacao</div>
+          <ul class="text-gray-300 text-sm space-y-1">
+            <li>· Update do modelo base pelo provedor</li>
+            <li>· Crescimento excessivo da memória</li>
+            <li>· Mudanca em APIs externas integradas</li>
+            <li>· Context window overflow em chats longos</li>
+          </ul>
+        </div>
+        <div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+          <div class="text-teal-400 font-semibold mb-2">Sinais de alerta para monitorar</div>
+          <ul class="text-gray-300 text-sm space-y-1">
+            <li>· Aumento de retentativas de ferramentas</li>
+            <li>· Latência média acima do baseline</li>
+            <li>· Queda na taxa de thumbs-up do usuário</li>
+            <li>· Erros 429 (rate limit) frequentes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">3</span>
+        <h2 class="text-2xl font-bold text-white">Estratégias de Deploy</h2>
+      </div>
+
+      <p class="text-gray-300 mb-4">Cada estratégia de deploy tem trade-offs de custo, controle e complexidade. Escolha baseado no seu nível de conforto com infraestrutura.</p>
+      <div class="space-y-3 mb-4">
+        <div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+          <div class="flex justify-between items-start mb-2">
+            <div class="text-white font-semibold">VPS (Hetzner, DigitalOcean)</div>
+            <span class="text-xs px-2 py-0.5 bg-teal-500/20 text-teal-400 rounded-full">Recomendado</span>
+          </div>
+          <div class="text-gray-400 text-sm">Controle total, custo previsível (~€5-20/mês), systemd para uptime. Ideal para IronClaw e dados sensíveis.</div>
+        </div>
+        <div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+          <div class="text-white font-semibold mb-2">Railway / Render</div>
+          <div class="text-gray-400 text-sm">Deploy com git push, zero config de servidor. Ideal para prototipos e OpenClaw. Custo variável por uso.</div>
+        </div>
+        <div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+          <div class="text-white font-semibold mb-2">Docker + Compose</div>
+          <div class="text-gray-400 text-sm">Ambiente reproduzível, fácil rollback de versoes. Rodar em qualquer VPS ou máquina local com um comando.</div>
+        </div>
+      </div>
+      <div class="bg-gray-800 rounded-xl p-4 font-mono text-sm">
+        <div class="text-gray-500 mb-2"># deploy com systemd</div>
+        <div class="text-gray-300">sudo systemctl enable intelecto</div>
+        <div class="text-gray-300">sudo systemctl start intelecto</div>
+        <div class="text-gray-300">sudo journalctl -u intelecto -f</div>
+      </div>
+    </section>
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">4</span>
+        <h2 class="text-2xl font-bold text-white">Observabilidade e Métricas</h2>
+      </div>
+
+      <p class="text-gray-300 mb-4">Um assistente em producao precisa de logs estruturados, métricas de negócio e alertas automáticos. O INTELECTO inclui um módulo de observabilidade configurável.</p>
+      <div class="bg-gray-800 rounded-xl p-5 mb-4 font-mono text-sm">
+        <div class="text-gray-500 mb-2"># observability.py — structured logging</div>
+        <div class="text-blue-400">import</div><span class="text-gray-300"> structlog</span>
+        <div class="text-gray-300">log = structlog.get_logger()</div>
+        <div class="text-gray-300 mt-2">log.info("request_processed",</div>
+        <div class="text-gray-300">&nbsp;&nbsp;user_id=user.id,</div>
+        <div class="text-gray-300">&nbsp;&nbsp;duration_ms=elapsed,</div>
+        <div class="text-gray-300">&nbsp;&nbsp;tokens_used=response.usage.total,</div>
+        <div class="text-gray-300">&nbsp;&nbsp;tools_called=[t.name for t in tools],</div>
+        <div class="text-gray-300">&nbsp;&nbsp;success=True</div>
+        <div class="text-gray-300">)</div>
+      </div>
+      <div class="bg-rose-900/30 border border-rose-500/30 rounded-xl p-4">
+        <div class="text-rose-400 font-semibold mb-2">Dashboards recomendados</div>
+        <div class="text-gray-300 text-sm">Grafana + Prometheus para VPS self-hosted. Ou simplesmente um arquivo de métricas JSON consultado por um script diário de health check.</div>
+      </div>
+    </section>
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">5</span>
+        <h2 class="text-2xl font-bold text-white">Ciclo de Melhoria Contínua</h2>
+      </div>
+
+      <p class="text-gray-300 mb-4">Nao existe assistente pronto. O ciclo de melhoria transforma feedback de uso real em melhorias sistemáticas — sem quebrar o que já funciona.</p>
+      <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 mb-4">
+        <div class="text-white font-semibold mb-3">Ciclo Semanal Recomendado</div>
+        <div class="space-y-3">
+          <div class="flex gap-3 items-start">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-xs flex-shrink-0">1</span>
+            <div class="text-gray-300 text-sm"><span class="text-white font-medium">Revisar logs</span> — identificar as 3 interacoes com mais retentativas ou erros</div>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-xs flex-shrink-0">2</span>
+            <div class="text-gray-300 text-sm"><span class="text-white font-medium">Categorizar falhas</span> — SOUL.md, Tool, Modelo, Memoria ou Canal?</div>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-xs flex-shrink-0">3</span>
+            <div class="text-gray-300 text-sm"><span class="text-white font-medium">Corrigir o mais impactante</span> — uma mudanca por vez, com teste antes de deploy</div>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="w-7 h-7 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-xs flex-shrink-0">4</span>
+            <div class="text-gray-300 text-sm"><span class="text-white font-medium">Medir o impacto</span> — comparar métricas antes/depois por 48h</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">6</span>
+        <h2 class="text-2xl font-bold text-white">Próximos Passos e Comunidade INEMA.CLUB</h2>
+      </div>
+
+      <p class="text-gray-300 mb-4">Parabéns por completar o curso INTELECTO! Você agora tem os fundamentos para construir, deploiar e evoluir seu assistente pessoal. O próximo passo é usar na prática — nada substitui o aprendizado com uso real.</p>
+      <div class="bg-rose-900/30 border border-rose-500/30 rounded-xl p-5 mb-5">
+        <div class="text-rose-400 font-semibold mb-3">Seus próximos 30 dias</div>
+        <div class="space-y-2 text-sm text-gray-300">
+          <div class="flex gap-2"><span class="text-rose-400 font-bold">Semana 1:</span> MVP rodando no seu canal principal</div>
+          <div class="flex gap-2"><span class="text-rose-400 font-bold">Semana 2:</span> Memória persistente + 2 ferramentas customizadas</div>
+          <div class="flex gap-2"><span class="text-rose-400 font-bold">Semana 3:</span> Deploy em VPS com systemd e monitoramento</div>
+          <div class="flex gap-2"><span class="text-rose-400 font-bold">Semana 4:</span> Primeira rodada de melhoria baseada em logs reais</div>
+        </div>
+      </div>
+      <div class="bg-gray-800 border border-gray-700 rounded-xl p-5">
+        <div class="text-white font-semibold mb-3">Comunidade e Recursos</div>
+        <div class="space-y-2 text-sm text-gray-300">
+          <div>· <a href="https://inema.club" class="text-sky-400 hover:underline" target="_blank">INEMA.CLUB</a> — hub central de cursos e projetos de IA aplicada</div>
+          <div>· Repositório INTELECTO no GitHub — contribua com Tools e Channels</div>
+          <div>· Compartilhe seu assistente — templates de SOUL.md ajudam a comunidade</div>
+          <div>· Discord INEMA — suporte técnico e colaboracao em projetos</div>
+        </div>
+      </div>
+    </section>
+    <div class="flex justify-start gap-3 mt-10 pt-8 border-t border-gray-800">
+      <a href="index.html" class="px-5 py-2.5 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-medium transition-colors">← Voltar à Trilha 6</a>
+      <a href="../../index.html" class="px-5 py-2.5 bg-rose-700 hover:bg-rose-600 text-white rounded-lg font-medium transition-colors">Conclusao do Curso</a>
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-800 py-6 mt-10">
+    <div class="max-w-4xl mx-auto px-4 text-center text-sm text-gray-500">
+      Curso INTELECTO · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:underline">INEMA.CLUB</a>
+    </div>
+  </footer>
+
+  <script>
+    
+  const html = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  if (localStorage.getItem('theme') === 'light') html.classList.add('light');
+  btn.addEventListener('click', () => {
+    html.classList.toggle('light');
+    localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
+  });
+
+  </script>
+</body>
+</html>
