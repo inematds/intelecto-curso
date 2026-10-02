@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>INTELECTO — From Zero to AI Expert</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-emerald-400 { color: #059669; }
+
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-blue-400 { color: #2563eb; }
+
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,0.12); }
+    html:not(.dark) .bg-purple-500\/10 { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .border-purple-500\/30 { border-color: rgba(124,58,237,0.25); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-purple-400 { color: #7c3aed; }
+
+    html:not(.dark) .text-amber-400 { color: #92400e; }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(217,119,6,0.12); }
+    html:not(.dark) .bg-amber-500\/10 { background-color: rgba(217,119,6,0.08); }
+    html:not(.dark) .border-amber-500\/30 { border-color: rgba(217,119,6,0.25); }
+    html:not(.dark) .hover\:text-amber-400:hover { color: #92400e; }
+    html:not(.dark) .hover\:bg-amber-500\/10:hover { background-color: rgba(217,119,6,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-amber-400 { color: #92400e; }
+
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13,148,136,0.12); }
+    html:not(.dark) .bg-teal-500\/10 { background-color: rgba(13,148,136,0.08); }
+    html:not(.dark) .border-teal-500\/30 { border-color: rgba(13,148,136,0.25); }
+    html:not(.dark) .hover\:text-teal-400:hover { color: #0d9488; }
+    html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13,148,136,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-teal-400 { color: #0d9488; }
+
+    html:not(.dark) .text-rose-400 { color: #9f1239; }
+    html:not(.dark) .bg-rose-500\/20 { background-color: rgba(225,29,72,0.12); }
+    html:not(.dark) .bg-rose-500\/10 { background-color: rgba(225,29,72,0.08); }
+    html:not(.dark) .border-rose-500\/30 { border-color: rgba(225,29,72,0.25); }
+    html:not(.dark) .hover\:text-rose-400:hover { color: #9f1239; }
+    html:not(.dark) .hover\:bg-rose-500\/10:hover { background-color: rgba(225,29,72,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-rose-400 { color: #9f1239; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+  </style>
+<link href="https://inematds.github.io/intelecto-curso/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/es/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="index.html">
+<span class="text-2xl">🤖</span>
+<span class="font-bold text-lg hidden sm:inline">INTELECTO</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-emerald-400 hover:text-emerald-300 text-sm font-medium hidden sm:inline" href="https://inematds.github.io/intelecto/" target="_blank">INTELECTO Project ↗</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20">
+<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+</svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero -->
+<header class="bg-gradient-to-br from-dark-800 via-dark-900 to-dark-800 py-20 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm font-semibold mb-6">
+        Jarvis-Style AI Framework — No Bloated Frameworks
+      </div>
+<h1 class="text-4xl sm:text-5xl font-bold mb-6">
+        🤖 Build Your <span class="text-primary">INTELECTO</span>
+</h1>
+<p class="text-xl text-neutral-400 max-w-3xl mx-auto mb-8">
+        From scratch to a complete personal assistant with Zero-Trust security, persistent memory, and multiple channels. No LangChain. No CrewAI. Just pure Python and smart architecture.
+      </p>
+<div class="flex flex-wrap justify-center gap-4 mb-12">
+<div class="flex items-center space-x-2 bg-dark-800 rounded-lg px-4 py-2 border border-dark-600">
+<span class="text-primary font-bold text-xl">6</span>
+<span class="text-neutral-400 text-sm">Tracks</span>
+</div>
+<div class="flex items-center space-x-2 bg-dark-800 rounded-lg px-4 py-2 border border-dark-600">
+<span class="text-primary font-bold text-xl">20</span>
+<span class="text-neutral-400 text-sm">Modules</span>
+</div>
+<div class="flex items-center space-x-2 bg-dark-800 rounded-lg px-4 py-2 border border-dark-600">
+<span class="text-primary font-bold text-xl">120+</span>
+<span class="text-neutral-400 text-sm">Topics</span>
+</div>
+<div class="flex items-center space-x-2 bg-dark-800 rounded-lg px-4 py-2 border border-dark-600">
+<span class="text-primary font-bold text-xl">~20h</span>
+<span class="text-neutral-400 text-sm">Content</span>
+</div>
+</div>
+<a class="inline-flex items-center px-8 py-4 bg-primary text-dark-900 font-bold rounded-xl hover:bg-yellow-300 transition-colors text-lg" href="curso/trilha1/index.html">
+        Get Started Now →
+      </a>
+</div>
+</header>
+<!-- Fluxo de Construção -->
+<section class="py-16 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-2xl font-bold text-center mb-4">How INTELECTO Is Built</h2>
+<p class="text-neutral-400 text-center mb-12 max-w-2xl mx-auto">The real 5-step flow that turns your idea into an assistant working on Telegram</p>
+<div class="grid grid-cols-1 sm:grid-cols-5 gap-4">
+<div class="bg-dark-800 rounded-xl p-5 border border-dark-600 text-center">
+<div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-lg flex items-center justify-center mx-auto mb-3">1</div>
+<div class="text-2xl mb-2">🛒</div>
+<p class="text-sm font-semibold">Select Ingredients</p>
+<p class="text-xs text-neutral-500 mt-1">Your Jarvis Features</p>
+</div>
+<div class="bg-dark-800 rounded-xl p-5 border border-dark-600 text-center">
+<div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold text-lg flex items-center justify-center mx-auto mb-3">2</div>
+<div class="text-2xl mb-2">📄</div>
+<p class="text-sm font-semibold">Generate Document</p>
+<p class="text-xs text-neutral-500 mt-1">my-framework-ingredients.md</p>
+</div>
+<div class="bg-dark-800 rounded-xl p-5 border border-dark-600 text-center">
+<div class="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 font-bold text-lg flex items-center justify-center mx-auto mb-3">3</div>
+<div class="text-2xl mb-2">🤖</div>
+<p class="text-sm font-semibold">Pass to Claude Code</p>
+<p class="text-xs text-neutral-500 mt-1">"Read and build"</p>
+</div>
+<div class="bg-dark-800 rounded-xl p-5 border border-dark-600 text-center">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-bold text-lg flex items-center justify-center mx-auto mb-3">4</div>
+<div class="text-2xl mb-2">💬</div>
+<p class="text-sm font-semibold">Answer Questions</p>
+<p class="text-xs text-neutral-500 mt-1">Docker? Which model?</p>
+</div>
+<div class="bg-dark-800 rounded-xl p-5 border border-dark-600 text-center">
+<div class="w-10 h-10 rounded-full bg-teal-500/20 text-teal-400 font-bold text-lg flex items-center justify-center mx-auto mb-3">5</div>
+<div class="text-2xl mb-2">🚀</div>
+<p class="text-sm font-semibold">Working Assistant</p>
+<p class="text-xs text-neutral-500 mt-1">On Telegram, now</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trilhas -->
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<h2 class="text-2xl font-bold mb-4">The 6 Course Tracks</h2>
+<p class="text-neutral-400 mb-10">From beginner to expert in AI security. Each learning path is independent but connects to the whole.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- T1 Emerald -->
+<a class="group bg-dark-800 rounded-xl border border-dark-600 p-6 hover:border-emerald-500/30 transition-all hover:bg-emerald-500/10 block" href="curso/trilha1/index.html">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-2xl flex-shrink-0">🧠</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-semibold text-emerald-400 uppercase tracking-wide">Track 1 · Beginner</span>
+<span class="text-xs text-neutral-500">3 modules · ~3h</span>
+</div>
+<h3 class="text-lg font-bold mb-2 group-hover:text-emerald-400 transition-colors">Fundamentals</h3>
+<p class="text-sm text-neutral-400">“No bloated frameworks” philosophy, the 5-component architecture, and complete environment setup.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Philosophy</span>
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Architecture</span>
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Setup</span>
+</div>
+</div>
+</div>
+</a>
+<!-- T2 Blue -->
+<a class="group bg-dark-800 rounded-xl border border-dark-600 p-6 hover:border-blue-500/30 transition-all hover:bg-blue-500/10 block" href="curso/trilha2/index.html">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-2xl flex-shrink-0">🧬</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-semibold text-blue-400 uppercase tracking-wide">Track 2 · Beginner</span>
+<span class="text-xs text-neutral-500">3 modules · ~3h</span>
+</div>
+<h3 class="text-lg font-bold mb-2 group-hover:text-blue-400 transition-colors">Identity and Channels</h3>
+<p class="text-sm text-neutral-400">SOUL.md, interchangeable profiles, Telegram, WhatsApp, Discord, and SQLite FTS5 memory.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">SOUL.md</span>
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Telegram</span>
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Memory</span>
+</div>
+</div>
+</div>
+</a>
+<!-- T3 Purple - DESTAQUE -->
+<a class="group bg-dark-800 rounded-xl border border-purple-500/30 p-6 hover:border-purple-400 transition-all hover:bg-purple-500/10 block relative overflow-hidden" href="curso/trilha3/index.html">
+<div class="absolute top-3 right-3 bg-purple-500/20 text-purple-400 text-xs font-bold px-2 py-1 rounded-full">MAIN TRACK</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center text-2xl flex-shrink-0">🛡</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-semibold text-purple-400 uppercase tracking-wide">Track 3 · Advanced</span>
+<span class="text-xs text-neutral-500">4 modules · ~5h</span>
+</div>
+<h3 class="text-lg font-bold mb-2 group-hover:text-purple-400 transition-colors">Zero-Trust Security</h3>
+<p class="text-sm text-neutral-400">Prompt injection, Fernet + PBKDF2, WASM Sandbox, approval gates, and a complete audit trail.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Zero-Trust</span>
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Encryption</span>
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">IronClaw</span>
+</div>
+</div>
+</div>
+</a>
+<!-- T4 Amber -->
+<a class="group bg-dark-800 rounded-xl border border-dark-600 p-6 hover:border-amber-500/30 transition-all hover:bg-amber-500/10 block" href="curso/trilha4/index.html">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center text-2xl flex-shrink-0">🔗</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-semibold text-amber-400 uppercase tracking-wide">Track 4 · Intermediate</span>
+<span class="text-xs text-neutral-500">3 modules · ~4h</span>
+</div>
+<h3 class="text-lg font-bold mb-2 group-hover:text-amber-400 transition-colors">Memory and Integrations</h3>
+<p class="text-sm text-neutral-400">OpenRouter (100+ models), local Ollama, Google Workspace, GitHub, and webhook automation.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">OpenRouter</span>
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Tools</span>
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Webhooks</span>
+</div>
+</div>
+</div>
+</a>
+<!-- T5 Teal -->
+<a class="group bg-dark-800 rounded-xl border border-dark-600 p-6 hover:border-teal-500/30 transition-all hover:bg-teal-500/10 block" href="curso/trilha5/index.html">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 rounded-xl bg-teal-500/20 flex items-center justify-center text-2xl flex-shrink-0">🏗</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-semibold text-teal-400 uppercase tracking-wide">Track 5 · Advanced</span>
+<span class="text-xs text-neutral-500">3 modules · ~4h</span>
+</div>
+<h3 class="text-lg font-bold mb-2 group-hover:text-teal-400 transition-colors">Advanced Architectures</h3>
+<p class="text-sm text-neutral-400">The 6 Claw patterns, TinyClaw multi-agent setup, Agent Zero, and continuous learning loop.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">OpenClaw</span>
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Multi-Agents</span>
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Agent Zero</span>
+</div>
+</div>
+</div>
+</a>
+<!-- T6 Rose -->
+<a class="group bg-dark-800 rounded-xl border border-dark-600 p-6 hover:border-rose-500/30 transition-all hover:bg-rose-500/10 block" href="curso/trilha6/index.html">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 rounded-xl bg-rose-500/20 flex items-center justify-center text-2xl flex-shrink-0">🚀</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-semibold text-rose-400 uppercase tracking-wide">Track 6 · Expert</span>
+<span class="text-xs text-neutral-500">2 modules · ~2 hours</span>
+</div>
+<h3 class="text-lg font-bold mb-2 group-hover:text-rose-400 transition-colors">Final Project: Your Jarvis</h3>
+<p class="text-sm text-neutral-400">Planning, generating ingredients.md, Docker deployment, monitoring, and Phase 2 roadmap.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Planning</span>
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Deploy</span>
+<span class="text-xs bg-dark-700 text-neutral-400 px-2 py-1 rounded">Roadmap</span>
+</div>
+</div>
+</div>
+</a>
+</div>
+<!-- Os 8 Corredores -->
+<div class="mt-16">
+<h2 class="text-2xl font-bold mb-4">The 8 Feature Corridors</h2>
+<p class="text-neutral-400 mb-8">INTELECTO is a feature grocery store. You choose what you want without depending on a monolithic framework.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4">
+<div class="text-2xl mb-2">🧬</div>
+<p class="text-sm font-semibold">Identity</p>
+<p class="text-xs text-neutral-500 mt-1">SOUL.md, AIEOS, profiles</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4">
+<div class="text-2xl mb-2">🛡</div>
+<p class="text-sm font-semibold">Security</p>
+<p class="text-xs text-neutral-500 mt-1">WASM, ChaCha20, gates</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4">
+<div class="text-2xl mb-2">💬</div>
+<p class="text-sm font-semibold">Channels</p>
+<p class="text-xs text-neutral-500 mt-1">WhatsApp, Telegram, Voice</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4">
+<div class="text-2xl mb-2">🧠</div>
+<p class="text-sm font-semibold">Memory</p>
+<p class="text-xs text-neutral-500 mt-1">SQLite FTS5, BM25</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4">
+<div class="text-2xl mb-2">⚙</div>
+<p class="text-sm font-semibold">Automation</p>
+<p class="text-xs text-neutral-500 mt-1">Cron, Heartbeat, sub-agents</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4">
+<div class="text-2xl mb-2">🔗</div>
+<p class="text-sm font-semibold">Integrations</p>
+<p class="text-xs text-neutral-500 mt-1">OpenRouter, Ollama, MCP</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4">
+<div class="text-2xl mb-2">🧰</div>
+<p class="text-sm font-semibold">Skills</p>
+<p class="text-xs text-neutral-500 mt-1">Google, GitHub, Notion</p>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4">
+<div class="text-2xl mb-2">🏗</div>
+<p class="text-sm font-semibold">Architectures</p>
+<p class="text-xs text-neutral-500 mt-1">6 Claw patterns</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>INTELECTO Framework — Complete Course 2026 · <a class="text-emerald-400 hover:text-emerald-300" href="https://inematds.github.io/intelecto/" target="_blank">INTELECTO Project ↗</a> · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+<!-- inema-backlink:v1 -->
+<p style="display:block;width:100%;text-align:center;font-size:.85rem;margin:.75rem 0 0;opacity:.85"><a href="https://www.inema.club/cursos/74-intelecto-curso-do-zero-ao-expert-em-ia/" style="color:inherit;text-decoration:underline">Full course details on INEMA.CLUB</a> · <a href="https://www.inema.club/aprender-inteligencia-artificial/" style="color:inherit;text-decoration:underline">Guide: how to learn artificial intelligence</a></p>
+<!-- /inema-backlink:v1 -->
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'light') {
+      themeToggleDarkIcon.classList.remove('hidden');
+      html.classList.remove('dark');
+    } else {
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 2.2 — Canales de comunicación | INTELECTO</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>body{font-family:'Inter',sans-serif;}.dark body{background-color:#111827;}html:not(.dark) body{background-color:#f8fafc;}html:not(.dark) .bg-dark-900{background-color:#ffffff;}html:not(.dark) .bg-dark-800{background-color:#f9fafb;}html:not(.dark) .bg-dark-700{background-color:#f3f4f6;}html:not(.dark) .bg-dark-600{background-color:#e5e7eb;}html:not(.dark) .text-neutral-100{color:#111827;}html:not(.dark) .text-neutral-300{color:#4b5563;}html:not(.dark) .text-neutral-400{color:#6b7280;}html:not(.dark) .text-neutral-500{color:#9ca3af;}html:not(.dark) .border-dark-600{border-color:#d1d5db;}html:not(.dark) .text-blue-400{color:#2563eb;}html:not(.dark) .bg-blue-500\/20{background-color:rgba(37,99,235,0.12);}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,0.25);}html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important;}html:not(.dark) .text-primary{color:#a16207;}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,0.08);}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,0.25);}html:not(.dark) .text-sky-400{color:#0369a1;}html:not(.dark) .text-yellow-400{color:#a16207;}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7;}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95);}</style>
+<link href="https://inematds.github.io/intelecto-curso/curso/trilha2/modulo-2-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/en/curso/trilha2/modulo-2-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/es/curso/trilha2/modulo-2-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2/modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14"><div class="flex items-center space-x-4"><a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">INTELECTO</span></a><span class="text-neutral-600">|</span><a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a></div><div class="flex items-center space-x-2"><a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/20" href="index.html">T2 Identidad</a><button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle"><svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg><svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg></button></div></div></div></nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4"><div class="flex items-center space-x-2 text-sm text-neutral-400"><a class="hover:text-blue-400" href="../../index.html">Inicio</a><span>/</span><a class="hover:text-blue-400" href="index.html">Ruta 2</a><span>/</span><span class="text-blue-400">Módulo 2.2</span></div></nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.2</span><h1 class="text-3xl sm:text-4xl font-bold mb-4">💬 Canales de comunicación</h1><p class="text-lg text-neutral-400 max-w-3xl">Telegram, WhatsApp, Discord, Slack, correo electrónico IMAP y voz. Aprende el contrato BaseChannel e implementa cualquier canal en minutos.</p><div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl"><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Temas</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">60</div><div class="text-xs text-neutral-400">Minutos</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Básico</div><div class="text-xs text-neutral-400">Nivel</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Práctico</div><div class="text-xs text-neutral-400">Tipo</div></div></div></div></header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span><h2 class="text-2xl font-bold">📱 Telegram — el canal principal</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Telegram es la opción predeterminada por buenas razones: API estable y gratuita, soporte para archivos, botones inline, grupos y canales. <strong class="text-blue-400">95% de los casos de uso de un asistente personal</strong> funcionan perfectamente en Telegram.</p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4">📡 Polling vs webhook</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-dark-800/50 rounded-lg p-4"><h4 class="font-semibold text-blue-400 mb-2">Polling (Recomendado para desarrollo)</h4><p class="text-sm text-neutral-400">El bot pregunta periódicamente a Telegram: "¿hay mensajes nuevos?". Simple, sin infraestructura. Latencia de 1-2 segundos.</p></div>
+<div class="bg-dark-800/50 rounded-lg p-4"><h4 class="font-semibold text-emerald-400 mb-2">Webhook (Para producción)</h4><p class="text-sm text-neutral-400">Telegram envía mensajes directamente a tu URL. Requiere HTTPS público. Sin latencia extra. Ideal para VPS.</p></div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Seguridad en Telegram</h3>
+<p class="text-neutral-300">Configura TELEGRAM_ALLOWED_USERS solo con tus IDs. Cualquier persona puede enviar mensajes a un bot de Telegram: sin una whitelist, cualquiera controla tu Jarvis.</p>
+</div>
+</section>
+<section class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span><h2 class="text-2xl font-bold">🔗 BaseChannel — el contrato universal</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">O <strong class="text-blue-400">BaseChannel</strong> es la abstracción que permite que el Agent sea independiente del canal. No importa si usas Telegram o Discord: el Agent solo llama a send() y la implementación se encarga del resto.</p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4">🧩 Interfaz BaseChannel</h3>
+<div class="font-mono text-sm bg-dark-800 rounded-lg p-4 space-y-1">
+<div class="text-blue-400">class BaseChannel(ABC):</div>
+<br/>
+<div class="text-neutral-400">    @abstractmethod</div>
+<div class="text-neutral-300">    async def start(self) -&gt; None:</div>
+<div class="text-neutral-500">        """Inicializa la conexión y empieza a escuchar mensajes"""</div>
+<br/>
+<div class="text-neutral-400">    @abstractmethod</div>
+<div class="text-neutral-300">    async def send(self, user_id: str, message: str) -&gt; None:</div>
+<div class="text-neutral-500">        """Envía una respuesta al usuario"""</div>
+<br/>
+<div class="text-neutral-400">    @abstractmethod</div>
+<div class="text-neutral-300">    async def stop(self) -&gt; None:</div>
+<div class="text-neutral-500">        """Cierra la conexión de forma ordenada"""</div>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span><h2 class="text-2xl font-bold">💚 WhatsApp vía API Business</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">En Brasil, WhatsApp es insustituible. La <strong class="text-blue-400">Meta Business API</strong> permite la integración oficial — sin riesgo de bloqueo de la cuenta, con soporte para medios y plantillas aprobadas.</p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4">📋 Flujo de integración de WhatsApp</h3>
+<div class="space-y-3">
+<div class="flex items-start space-x-3"><div class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">1</div><p class="text-sm text-neutral-300">Crear una cuenta de Meta Business y una aplicación</p></div>
+<div class="flex items-start space-x-3"><div class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2</div><p class="text-sm text-neutral-300">Habilitar WhatsApp Business API y generar un token</p></div>
+<div class="flex items-start space-x-3"><div class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">3</div><p class="text-sm text-neutral-300">Configurar webhook con verificación de token</p></div>
+<div class="flex items-start space-x-3"><div class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">4</div><p class="text-sm text-neutral-300">Implementar WhatsAppChannel extendiendo BaseChannel</p></div>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span><h2 class="text-2xl font-bold">💬 Discord y Slack</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Para equipos, Discord y Slack son los canales naturales. Un Jarvis dentro del workspace del equipo <strong class="text-blue-400">elimina la necesidad de salir de la plataforma</strong> para hacerle preguntas al asistente.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h4 class="font-bold text-indigo-400 mb-3">🎮 Discord</h4>
+<ul class="space-y-2 text-sm text-neutral-400">
+<li>• discord.py con eventos on_message</li>
+<li>• Slash commands para interacción estructurada</li>
+<li>• Un thread por conversación para organizar</li>
+<li>• Reactions para aprobación/rechazo</li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h4 class="font-bold text-emerald-400 mb-3">💼 Slack</h4>
+<ul class="space-y-2 text-sm text-neutral-400">
+<li>• Bolt SDK con OAuth 2.0</li>
+<li>• Events API para escuchar mensajes</li>
+<li>• Manejador de menciones (@atlas)</li>
+<li>• Block Kit para respuestas enriquecidas</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span><h2 class="text-2xl font-bold">📧 Canal de correo electrónico IMAP</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">El correo electrónico es el canal con mayor ROI para la automatización. Clasificación, categorización y respuesta automática a correos rutinarios <strong class="text-blue-400">ahorra horas a la semana</strong> sin exigir cambios de hábitos: Jarvis opera en tu bandeja de entrada actual.</p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4">📬 Flujo de correo electrónico</h3>
+<div class="font-mono text-sm bg-dark-800 rounded-lg p-4">
+<div class="text-neutral-500"># Diagrama de flujo</div>
+<div class="text-neutral-300">Buzón IMAP ──→ Consulta IMAP (30s) ──→ ¿Hay un correo nuevo?</div>
+<div class="text-neutral-300">                                      │</div>
+<div class="text-neutral-300">                                      ▼</div>
+<div class="text-neutral-300">                              Analiza MIME + extrae texto</div>
+<div class="text-neutral-300">                                      │</div>
+<div class="text-neutral-300">                                      ▼</div>
+<div class="text-neutral-300">                              Agent.process(email)</div>
+<div class="text-neutral-300">                                      │</div>
+<div class="text-neutral-300">                              ┌───────┴───────┐</div>
+<div class="text-neutral-300">                         Respuesta automática         Borrador para revisión</div>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span><h2 class="text-2xl font-bold">🎤 Palabra de activación por voz</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">El canal de voz convierte a Jarvis en un asistente totalmente manos libres. Con <strong class="text-blue-400">Whisper para transcripción</strong> y una palabra de activación configurable, hablas con naturalidad y Jarvis responde con voz.</p>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo sobre latencia</h3>
+<p class="text-neutral-300">Para respuestas de voz en tiempo real, usa Whisper tiny (velocidad) para la transcripción y un modelo TTS local para la síntesis. Es posible lograr una latencia total inferior a 1 segundo con hardware de gama media.</p>
+</div>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4">🎙 Pipeline de voz</h3>
+<div class="font-mono text-sm space-y-1 text-neutral-300">
+<div>Micrófono → VAD (detecta el habla) → Buffer de audio</div>
+<div>         → Verificación de Wake word ("¿Atlas"?)</div>
+<div>         → Whisper STT → texto transcrito</div>
+<div>         → Agent.process(texto)</div>
+<div>         → TTS (text-to-speech)</div>
+<div>         → Speaker (respuesta de voz)</div>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del Módulo 2.2</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong>Telegram</strong><span class="text-neutral-400"> — Canal predeterminado: gratuito, robusto, polling o webhook</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong>BaseChannel</strong><span class="text-neutral-400"> — Contrato de 3 métodos: start(), send(), stop()</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong>WhatsApp</strong><span class="text-neutral-400"> — Meta Business API, webhook HTTPS, alto ROI en Brasil</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong>Discord/Slack</strong><span class="text-neutral-400"> — Canales de equipo con slash commands y eventos</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong>Correo electrónico IMAP</strong><span class="text-neutral-400"> — Clasificación y respuesta automática, el mayor ROI en horas ahorradas</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong>Voz</strong><span class="text-neutral-400"> — Whisper STT + wake word + TTS para interacción manos libres</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8"><h3 class="font-semibold text-blue-400 mb-2">Próximo módulo:</h3><p class="text-neutral-300">2.3 — Memoria y conocimiento: SQLite FTS5, BM25, 2 capas y compactación automática</p></div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-1.html">← Módulo 2.1</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-3.html">Siguiente: Módulo 2.3 →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-8"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>INTELECTO — Módulo 2.2: Canales de comunicación · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p></div></footer>
+<script>const themeToggle=document.getElementById('theme-toggle');const themeToggleDarkIcon=document.getElementById('theme-toggle-dark-icon');const themeToggleLightIcon=document.getElementById('theme-toggle-light-icon');const html=document.documentElement;if(localStorage.getItem('theme')==='light'){themeToggleDarkIcon.classList.remove('hidden');html.classList.remove('dark');}else{themeToggleLightIcon.classList.remove('hidden');}themeToggle.addEventListener('click',()=>{themeToggleDarkIcon.classList.toggle('hidden');themeToggleLightIcon.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});</script>
+</body>
+</html>

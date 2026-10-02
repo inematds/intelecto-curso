@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Track 5 — Advanced Architectures | INTELECTO</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+
+  .light body { background-color: #f8fafc; color: #1e293b; }
+  .light .bg-gray-900 { background-color: #ffffff !important; }
+  .light .bg-gray-800 { background-color: #f1f5f9 !important; }
+  .light .bg-gray-700 { background-color: #e2e8f0 !important; }
+  .light .bg-gray-600 { background-color: #cbd5e1 !important; }
+  .light .text-white { color: #1e293b !important; }
+  .light .text-gray-100 { color: #1e293b !important; }
+  .light .text-gray-200 { color: #334155 !important; }
+  .light .text-gray-300 { color: #475569 !important; }
+  .light .text-gray-400 { color: #64748b !important; }
+  .light .border-gray-700 { border-color: #e2e8f0 !important; }
+  .light .border-gray-600 { border-color: #cbd5e1 !important; }
+  .light .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1) !important; }
+  .light .bg-teal-900\/30 { background-color: rgba(20,184,166,0.1) !important; }
+  .light .bg-teal-800\/30 { background-color: rgba(20,184,166,0.08) !important; }
+  .light .bg-teal-500\/10 { background-color: rgba(20,184,166,0.08) !important; }
+  .light .bg-teal-400\/10 { background-color: rgba(20,184,166,0.06) !important; }
+  .light .border-teal-500\/30 { border-color: rgba(20,184,166,0.3) !important; }
+  .light .border-teal-400\/30 { border-color: rgba(20,184,166,0.25) !important; }
+  .light .hover\:bg-teal-900\/30:hover { background-color: rgba(20,184,166,0.1) !important; }
+  .light .group:hover .group-hover\:text-teal-400 { color: #0d9488 !important; }
+
+  </style>
+<link href="https://inematds.github.io/intelecto-curso/curso/trilha5/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/en/curso/trilha5/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/es/curso/trilha5/" hreflang="es" rel="alternate"/></head>
+<body class="bg-gray-900 text-white min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha5/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- Header -->
+<header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur sticky top-0 z-40">
+<div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="../../index.html">← Home</a>
+<span class="text-gray-600">|</span>
+<span class="text-teal-400 font-semibold">Track 5</span>
+<span class="text-gray-400 text-sm">Advanced Architectures</span>
+</div>
+<button class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 transition-colors" id="themeToggle">☀️/🌙</button>
+</div>
+</header>
+<!-- Hero -->
+<section class="bg-gradient-to-br from-teal-900/40 to-gray-900 border-b border-gray-800 py-12">
+<div class="max-w-5xl mx-auto px-4">
+<div class="flex items-center gap-3 mb-4">
+<span class="px-3 py-1 bg-teal-500/20 border border-teal-500/40 rounded-full text-teal-400 text-xs font-semibold uppercase tracking-wider">Track 5</span>
+</div>
+<h1 class="text-4xl font-bold text-white mb-3">Advanced Architectures</h1>
+<p class="text-gray-300 text-lg max-w-2xl">The 6 Claw patterns, multi-agent setup with TinyClaw, and Agent Zero's self-evolution loop. Choose the right architecture for each scenario.</p>
+<div class="mt-6 flex flex-wrap gap-4 text-sm text-gray-400">
+<span>3 modules</span>
+<span>·</span>
+<span>18 topics</span>
+<span>·</span>
+<span>Advanced Level</span>
+</div>
+</div>
+</section>
+<!-- Módulos -->
+<main class="max-w-5xl mx-auto px-4 py-10 space-y-4">
+<!-- Módulo 5.1 -->
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+<button class="w-full flex items-center justify-between p-5 text-left hover:bg-gray-700/50 transition-colors" onclick="toggleModule('mod51')">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold">5.1</span>
+<div>
+<div class="text-white font-semibold text-xl">The 6 Architecture Patterns</div>
+<div class="text-gray-400 text-sm mt-0.5">OpenClaw, ZeroClaw, NanoClaw, TinyClaw, IronClaw, and Agent Zero — when to use each one.</div>
+</div>
+</div>
+<svg class="w-5 h-5 text-gray-400 transition-transform" fill="none" id="arrow-mod51" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="hidden border-t border-gray-700" id="mod51">
+<ul class="p-4 space-y-1">
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-1.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">1</span>
+<div>
+<div class="text-white font-medium text-sm">What Is a Claw Architecture?</div>
+<div class="text-gray-400 text-xs mt-0.5">Unifying Concept of the INTELECTO Patterns</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-1.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">2</span>
+<div>
+<div class="text-white font-medium text-sm">OpenClaw — The Open Assistant</div>
+<div class="text-gray-400 text-xs mt-0.5">Unrestricted access, maximum personal productivity</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-1.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">3</span>
+<div>
+<div class="text-white font-medium text-sm">ZeroClaw and NanoClaw — Maximum Lightweight Design</div>
+<div class="text-gray-400 text-xs mt-0.5">Minimalist assistants for constrained contexts</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-1.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">4</span>
+<div>
+<div class="text-white font-medium text-sm">TinyClaw — Local Multi-Agents</div>
+<div class="text-gray-400 text-xs mt-0.5">Cloud-Free Sub-Agent Orchestration</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-1.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">5</span>
+<div>
+<div class="text-white font-medium text-sm">IronClaw — Zero-Trust Security</div>
+<div class="text-gray-400 text-xs mt-0.5">Maximum isolation for critical environments</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-1.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">6</span>
+<div>
+<div class="text-white font-medium text-sm">Agent Zero — Self-Construction</div>
+<div class="text-gray-400 text-xs mt-0.5">The self-improving and self-documenting pattern</div>
+</div>
+</li>
+</ul>
+<div class="px-4 pb-4 flex justify-start gap-3">
+<button class="px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white rounded-lg text-sm font-medium transition-colors" onclick="openModal('modulo-5-1.html')">View in Modal</button>
+<a class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-sm font-medium transition-colors" href="modulo-5-1.html" target="_blank">View Full</a>
+</div>
+</div>
+</div>
+<!-- Módulo 5.2 -->
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+<button class="w-full flex items-center justify-between p-5 text-left hover:bg-gray-700/50 transition-colors" onclick="toggleModule('mod52')">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold">5.2</span>
+<div>
+<div class="text-white font-semibold text-xl">Multi-Agents with TinyClaw</div>
+<div class="text-gray-400 text-sm mt-0.5">Orchestration of specialized agents, asynchronous communication, and division of responsibilities.</div>
+</div>
+</div>
+<svg class="w-5 h-5 text-gray-400 transition-transform" fill="none" id="arrow-mod52" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="hidden border-t border-gray-700" id="mod52">
+<ul class="p-4 space-y-1">
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-2.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">1</span>
+<div>
+<div class="text-white font-medium text-sm">What Is Multi-Agent Orchestration?</div>
+<div class="text-gray-400 text-xs mt-0.5">Divide and conquer with specialized AI</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-2.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">2</span>
+<div>
+<div class="text-white font-medium text-sm">Why TinyClaw for Multi-Agent Systems?</div>
+<div class="text-gray-400 text-xs mt-0.5">Advantages of the local, controlled pattern</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-2.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">3</span>
+<div>
+<div class="text-white font-medium text-sm">Hub-and-Spoke Architecture</div>
+<div class="text-gray-400 text-xs mt-0.5">central orchestrator and satellite agents</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-2.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">4</span>
+<div>
+<div class="text-white font-medium text-sm">Asynchronous Communication Between Agents</div>
+<div class="text-gray-400 text-xs mt-0.5">asyncio, queues, and message contracts</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-2.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">5</span>
+<div>
+<div class="text-white font-medium text-sm">Specialization and Task Division</div>
+<div class="text-gray-400 text-xs mt-0.5">Research, Code, Write, Review agents</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-2.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">6</span>
+<div>
+<div class="text-white font-medium text-sm">Multi-Agent Monitoring and Debugging</div>
+<div class="text-gray-400 text-xs mt-0.5">Context tracking and distributed logs</div>
+</div>
+</li>
+</ul>
+<div class="px-4 pb-4 flex justify-start gap-3">
+<button class="px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white rounded-lg text-sm font-medium transition-colors" onclick="openModal('modulo-5-2.html')">View in Modal</button>
+<a class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-sm font-medium transition-colors" href="modulo-5-2.html" target="_blank">View Full</a>
+</div>
+</div>
+</div>
+<!-- Módulo 5.3 -->
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+<button class="w-full flex items-center justify-between p-5 text-left hover:bg-gray-700/50 transition-colors" onclick="toggleModule('mod53')">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold">5.3</span>
+<div>
+<div class="text-white font-semibold text-xl">Agent Zero and Self-Evolution</div>
+<div class="text-gray-400 text-sm mt-0.5">The advanced ReAct loop, self-documentation, meta-learning, and agents that improve themselves.</div>
+</div>
+</div>
+<svg class="w-5 h-5 text-gray-400 transition-transform" fill="none" id="arrow-mod53" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="hidden border-t border-gray-700" id="mod53">
+<ul class="p-4 space-y-1">
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-3.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">1</span>
+<div>
+<div class="text-white font-medium text-sm">What Is the Agent Zero Pattern?</div>
+<div class="text-gray-400 text-xs mt-0.5">Agents that improve themselves and learn</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-3.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">2</span>
+<div>
+<div class="text-white font-medium text-sm">Why Build Self-Evolving Agents?</div>
+<div class="text-gray-400 text-xs mt-0.5">Reduced maintenance and greater autonomy</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-3.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">3</span>
+<div>
+<div class="text-white font-medium text-sm">Advanced ReAct Loop with Reflection</div>
+<div class="text-gray-400 text-xs mt-0.5">Think → Act → Observe → Reflect → Improve</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-3.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">4</span>
+<div>
+<div class="text-white font-medium text-sm">Auto-Documentation and Dynamic SOUL.md</div>
+<div class="text-gray-400 text-xs mt-0.5">Agents that update their own identity</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-3.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">5</span>
+<div>
+<div class="text-white font-medium text-sm">Meta-Learning with Episodic Memory</div>
+<div class="text-gray-400 text-xs mt-0.5">Learn from previous mistakes and successes</div>
+</div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg hover:bg-teal-900/30 transition-colors cursor-pointer" onclick="openModal('modulo-5-3.html')">
+<span class="w-7 h-7 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-xs flex-shrink-0 mt-0.5">6</span>
+<div>
+<div class="text-white font-medium text-sm">Ethical Limits and Human Control</div>
+<div class="text-gray-400 text-xs mt-0.5">When and how to pause auto-evolution</div>
+</div>
+</li>
+</ul>
+<div class="px-4 pb-4 flex justify-start gap-3">
+<button class="px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white rounded-lg text-sm font-medium transition-colors" onclick="openModal('modulo-5-3.html')">View in Modal</button>
+<a class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-sm font-medium transition-colors" href="modulo-5-3.html" target="_blank">View Full</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="border-t border-gray-800 py-6 mt-10">
+<div class="max-w-5xl mx-auto px-4 text-center text-sm text-gray-500">
+      INTELECTO Course · <a class="text-sky-400 hover:underline" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+</footer>
+<!-- Modal -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm" id="modal">
+<div class="bg-gray-900 rounded-2xl w-full max-w-5xl h-[85vh] mx-4 flex flex-col border border-gray-700 shadow-2xl">
+<div class="flex items-center justify-between p-4 border-b border-gray-700">
+<span class="text-gray-400 text-sm">Module Visualization</span>
+<button class="text-gray-400 hover:text-white transition-colors text-xl" onclick="closeModal()">✕</button>
+</div>
+<iframe class="flex-1 rounded-b-2xl w-full border-0" id="modalFrame" src=""></iframe>
+</div>
+</div>
+<script>
+    
+  const html = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  if (localStorage.getItem('theme') === 'light') html.classList.add('light');
+  btn.addEventListener('click', () => {
+    html.classList.toggle('light');
+    localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
+  });
+
+    function toggleModule(id) {
+      const el = document.getElementById(id);
+      const arrow = document.getElementById('arrow-' + id);
+      el.classList.toggle('hidden');
+      arrow.style.transform = el.classList.contains('hidden') ? '' : 'rotate(180deg)';
+    }
+    function openModal(file) {
+      document.getElementById('modalFrame').src = file;
+      const m = document.getElementById('modal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+    function closeModal() {
+      const m = document.getElementById('modal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+      document.getElementById('modalFrame').src = '';
+    }
+  </script>
+</body>
+</html>

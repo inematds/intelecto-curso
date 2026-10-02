@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Track 2 — Identity and Channels | INTELECTO</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+  </style>
+<link href="https://inematds.github.io/intelecto-curso/curso/trilha2/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/en/curso/trilha2/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/es/curso/trilha2/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">INTELECTO</span></a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Identity</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Security</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors hidden sm:block" href="../trilha4/index.html"><span>Integrations</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">TRACK 2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧬 Identity and Channels</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">SOUL.md for a unique personality, AIEOS to export identity, Telegram as the primary channel, and SQLite FTS5 for persistent long-term memory.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">3</div><div class="text-xs text-neutral-400">Modules</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">18</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~3h</div><div class="text-xs text-neutral-400">Duration</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Basic</div><div class="text-xs text-neutral-400">Level</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="mb-4 text-sm text-neutral-500 font-semibold uppercase tracking-wide">Detailed Content</div>
+<!-- Módulo 2.1 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.1</span><span class="text-xs text-neutral-500">~60 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🧬 Identity and Personality</h3>
+<p class="text-neutral-400 text-sm">SOUL.md, AGENTS.md, USER.md, AIEOS system to export personality, and interchangeable profiles by context.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span><span class="text-lg">📜</span><div><span class="font-medium">SOUL.md — The Essence of Jarvis</span><span class="text-neutral-500 text-sm ml-2">- Tone, values, and style</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">SOUL.md is the most important file in workspace/. It defines the assistant's name, pronouns, tone of voice (formal/casual), ethical values, response style, technical preferences, and even sense of humor.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">A well-written SOUL.md transforms Jarvis from a generic chatbot into a partner with a consistent personality. It’s the difference between “How can I help?” and “Straight to the point: what’s stuck?”</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Persona design, system prompt injection, consistent tone, values as guardrails, communication style.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span><span class="text-lg">📋</span><div><span class="font-medium">AGENTS.md — Behavior Rules</span><span class="text-neutral-500 text-sm ml-2">- What to do and what never to do</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">AGENTS.md contains explicit behavior rules: always ask for confirmation before deleting files, never run code without review in autonomous mode, and prioritize security over speed.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Explicit rules are more reliable than expecting the LLM to "understand" what you want. AGENTS.md is your usage contract with the assistant.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Positive rules (ALWAYS), negative rules (NEVER), task priorities, escalation to a human.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span><span class="text-lg">👤</span><div><span class="font-medium">USER.md — Who the User Is</span><span class="text-neutral-500 text-sm ml-2">- Creator's context</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">USER.md contains information about the creator: name, favorite tech stack, company, time zone, and ongoing projects. Jarvis uses this to personalize every response.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Without USER.md, the assistant responds generically. With a well-filled-out USER.md, it suggests Python when you prefer Python, and knows you use Vim, not VS Code.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">User profile, technical preferences, professional context, response personalization.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span><span class="text-lg">🔄</span><div><span class="font-medium">AIEOS — Export Personality</span><span class="text-neutral-500 text-sm ml-2">- Identity portability</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">AIEOS is INTELECTO's identity export format. It lets you serialize the complete personality (SOUL + AGENTS + USER) in a single portable file.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">You can have multiple Jarvis instances with different personalities — one for work, one for personal projects — and switch between them instantly.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Identity serialization, interchangeable profiles, personality import/export, multi-persona.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span><span class="text-lg">🎭</span><div><span class="font-medium">Interchangeable Profiles</span><span class="text-neutral-500 text-sm ml-2">- Multiple personalities by context</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">INTELECTO supports multiple SOUL.md profiles. You can have "Atlas-Dev" for coding (direct, technical), "Atlas-Meeting" for a corporate context (formal, diplomatic), and switch between them with a command.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Different contexts call for different tones. An assistant that only speaks one way is limited. Interchangeable profiles provide real flexibility.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Profile switching, context-aware personality, workspace profiles, identity hot-swapping.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span><span class="text-lg">🧪</span><div><span class="font-medium">Testing and Iterating on SOUL.md</span><span class="text-neutral-500 text-sm ml-2">- How to refine the personality</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">Writing SOUL.md is an iterative process. You write, test it with real questions, observe unexpected responses, and refine the instructions until the behavior is consistent with what you want.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">No SOUL.md is perfect in its first version. The refinement process is the most important prompt engineering skill for personal assistants.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Iterative prompt engineering, personality edge cases, consistency testing, tone calibration.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-1')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-1.html">View Full</a>
+</div>
+</div>
+<!-- Módulo 2.2 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.2</span><span class="text-xs text-neutral-500">~60 min</span></div>
+<h3 class="text-2xl font-bold mb-2">💬 Communication Channels</h3>
+<p class="text-neutral-400 text-sm">Telegram as the primary channel, WhatsApp, Discord, Slack, IMAP Email, and BaseChannel implementation.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span><span class="text-lg">📱</span><div><span class="font-medium">Telegram — The Primary Channel</span><span class="text-neutral-500 text-sm ml-2">- Why Telegram is the default choice</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">Telegram offers a robust API, polling or webhooks, file sending, inline buttons, and groups. It’s the easiest channel to configure and the most reliable for intensive personal use.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Most demos and real-world personal assistant use cases use Telegram. Mastering this channel first speeds up all the others—the BaseChannel pattern is the same.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">BotFather, polling vs. webhook, inline keyboards, chat_id, allowed users, message types.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span><span class="text-lg">🔗</span><div><span class="font-medium">BaseChannel — The Universal Contract</span><span class="text-neutral-500 text-sm ml-2">- How to implement any channel</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">BaseChannel defines 3 abstract methods: start() initializes the connection, send(user_id, message) delivers the response, and stop() closes gracefully. Any platform that implements these 3 is a valid channel.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The Agent never knows which channel it’s using — it only calls send(). This abstraction lets you switch from Telegram to Discord in minutes without changing the Agent.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Abstract interface, adapter pattern, channel-agnostic agent, graceful shutdown.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span><span class="text-lg">💚</span><div><span class="font-medium">WhatsApp via Business API</span><span class="text-neutral-500 text-sm ml-2">- Integration with Meta Business API</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">WhatsApp via Meta Business API requires approval, but it's the most widely used channel in Brazil. INTELECTO implements WhatsAppChannel, which uses Meta webhooks to receive messages and the API to send them.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">For professional use in Brazil, WhatsApp is indispensable. Having a Jarvis that responds on WhatsApp is a competitive advantage for freelancers and businesses.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Meta Business API, webhook verification, phone number ID, template messages, rate limits.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span><span class="text-lg">💬</span><div><span class="font-medium">Discord and Slack</span><span class="text-neutral-500 text-sm ml-2">- Channels for teams</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">Discord and Slack are ideal channels for teams. DiscordChannel uses discord.py and supports slash commands. SlackChannel uses the Events API with OAuth for enterprise workspaces.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">An assistant that lives in the team’s Discord/Slack answers everyone’s questions, automates workflows, and eliminates unnecessary meetings.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Bot permissions, slash commands, event subscriptions, workspace scopes, mention handling.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span><span class="text-lg">📧</span><div><span class="font-medium">IMAP Email Channel</span><span class="text-neutral-500 text-sm ml-2">- Jarvis that responds to emails</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">EmailChannel uses IMAP to monitor an inbox and SMTP to send replies. Jarvis can reply to emails automatically or generate drafts for human review.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Automatic email triage is one of the highest-ROI use cases. A Jarvis that categorizes, prioritizes, and replies to routine emails saves hours per week.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">IMAP polling, MIME parsing, thread tracking, auto-reply vs draft, spam filtering.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span><span class="text-lg">🎤</span><div><span class="font-medium">Voice Wake Word</span><span class="text-neutral-500 text-sm ml-2">- Whisper + trigger word</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">VoiceChannel uses Whisper for real-time transcription. When it detects the configured wake word (e.g., "Atlas"), it sends the transcribed text to the Agent and synthesizes the response with TTS.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Voice is the most natural channel for interaction while you work. A Jarvis that listens and responds by voice makes your workflow hands-free.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Wake word detection, Whisper STT, TTS synthesis, VAD (voice activity detection), response latency.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-2')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-2.html">View Full</a>
+</div>
+</div>
+<!-- Módulo 2.3 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.3</span><span class="text-xs text-neutral-500">~60 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🧠 Memory and Knowledge</h3>
+<p class="text-neutral-400 text-sm">SQLite FTS5 + BM25, 2-layer system (MEMORY.md + memory.db), categories, and automatic compaction.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span><span class="text-lg">🗃</span><div><span class="font-medium">SQLite FTS5 — Full-Text Search</span><span class="text-neutral-500 text-sm ml-2">- Native full-text search</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">FTS5 is SQLite’s full-text search module. No external dependencies, no server, no cost—just SQLite with highly optimized full-text search indexes.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Jarvis's memory needs to be quickly searchable. FTS5 automatically indexes all content and enables searches in milliseconds across thousands of records.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">FTS5 virtual table, tokenization, inverted index, prefix search, phrase matching.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span><span class="text-lg">📊</span><div><span class="font-medium">BM25 — Relevance Ranking</span><span class="text-neutral-500 text-sm ml-2">- How Jarvis prioritizes memories</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">BM25 is the relevance ranking algorithm used by FTS5. When Jarvis searches for memories related to your message, BM25 ensures the most relevant ones appear first—not just the most recent ones.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Without relevance ranking, memory returns random results. BM25 is what makes Jarvis’s memory intelligent, rather than just a list of facts.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Term frequency, inverse document frequency, field weights, bm25() function in SQLite.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span><span class="text-lg">🏗</span><div><span class="font-medium">2-Layer Memory System</span><span class="text-neutral-500 text-sm ml-2">- MEMORY.md + memory.db</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">Layer 1: MEMORY.md in workspace/ — static bootstrap facts that are always in the system prompt. Layer 2: memory.db — dynamic facts extracted from conversations and retrieved by relevance when needed.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">You can't put all the memory in the system prompt (expensive and slow). The 2-layer architecture solves this: the essentials are always present, and the history is retrieved on demand.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Context window management, RAG (retrieval augmented generation), bootstrap facts, dynamic retrieval.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span><span class="text-lg">🏷</span><div><span class="font-medium">Memory Categories</span><span class="text-neutral-500 text-sm ml-2">- fact / conversation / solution</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">Each entry in memory.db has a category: fact (a fact about the user or the world), conversation (an important excerpt from a past conversation), solution (how a problem was solved — very useful for avoiding rework).</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Categories allow more specific searches. When you report a bug, Jarvis searches only category='solution' to see if it has already solved something similar.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Categorical filtering, solution memory, conversation threading, automatic fact extraction.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span><span class="text-lg">🔍</span><div><span class="font-medium">Automatic Deduplication</span><span class="text-neutral-500 text-sm ml-2">- Avoid duplicate memories</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">Before saving a new fact, store.py searches for similar facts with BM25. If the similarity is high, it updates the existing fact instead of creating a duplicate. This keeps memory from growing with redundant information.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Without deduplication, memory fills up with variations of the same fact. "User uses Python" and "User prefers Python" would be separate entries — deduplication merges them.</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Similarity threshold, upsert pattern, cosine similarity alternative, fact merging.</p></div>
+</div></div>
+</div>
+<div class="topic-item"><button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)"><span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span><span class="text-lg">🗜</span><div><span class="font-medium">Automatic Compaction</span><span class="text-neutral-500 text-sm ml-2">- Keep memory healthy</span></div></button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">When the memory database exceeds a configured limit, a compaction job summarizes old entries into denser facts. Keeps memory relevant without growing indefinitely.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Unlimited memory is a problem. Automatic compaction resolves the tension between "remembering everything" and "keeping search efficient".</p></div>
+<div><span class="text-blue-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Memory compaction, summarization, memory TTLs, strategic pruning, relevance decay.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-3')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-3.html">View Full</a>
+</div>
+</div>
+<div class="flex justify-between mt-8">
+<a class="px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha1/index.html">← Track 1</a>
+<a class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha3/index.html">Track 3: Security →</a>
+</div>
+</main>
+<!-- Modais -->
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-1" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.1</span><span class="font-semibold">Identity and Personality</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-1.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-2" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.2</span><span class="font-semibold">Communication Channels</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-2.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-3" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.3</span><span class="font-semibold">Memory and Knowledge</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-3.html"></iframe>
+</div>
+</div>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>INTELECTO — Track 2: Identity and Channels · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    }
+    function closeModal() {
+      document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden'));
+      document.body.style.overflow = 'auto';
+    }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { themeToggleDarkIcon.classList.remove('hidden'); html.classList.remove('dark'); }
+    else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

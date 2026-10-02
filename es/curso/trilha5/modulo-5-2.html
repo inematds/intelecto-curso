@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 5.2 — Multiagentes con TinyClaw | INTELECTO</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+
+  .light body { background-color: #f8fafc; color: #1e293b; }
+  .light .bg-gray-900 { background-color: #ffffff !important; }
+  .light .bg-gray-800 { background-color: #f1f5f9 !important; }
+  .light .bg-gray-700 { background-color: #e2e8f0 !important; }
+  .light .text-white { color: #1e293b !important; }
+  .light .text-gray-100 { color: #1e293b !important; }
+  .light .text-gray-200 { color: #334155 !important; }
+  .light .text-gray-300 { color: #475569 !important; }
+  .light .text-gray-400 { color: #64748b !important; }
+  .light .border-gray-700 { border-color: #e2e8f0 !important; }
+  .light .border-gray-600 { border-color: #cbd5e1 !important; }
+  .light .bg-teal-900\/30 { background-color: rgba(20,184,166,0.1) !important; }
+  .light .bg-teal-500\/10 { background-color: rgba(20,184,166,0.08) !important; }
+  .light .border-teal-500\/30 { border-color: rgba(20,184,166,0.3) !important; }
+
+  </style>
+<link href="https://inematds.github.io/intelecto-curso/curso/trilha5/modulo-5-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/en/curso/trilha5/modulo-5-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/es/curso/trilha5/modulo-5-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-gray-900 text-white min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur sticky top-0 z-40">
+<div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="index.html">← Ruta 5</a>
+<span class="text-gray-600">|</span>
+<span class="text-teal-400 font-semibold">Módulo 5.2</span>
+</div>
+<button class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 transition-colors" id="themeToggle">☀️/🌙</button>
+</div>
+</header>
+<div class="bg-gradient-to-br from-teal-900/40 to-gray-900 border-b border-gray-800 py-10">
+<div class="max-w-4xl mx-auto px-4">
+<span class="text-teal-400 text-sm font-semibold uppercase tracking-wider">Módulo 5.2</span>
+<h1 class="text-3xl font-bold text-white mt-2 mb-3">Multiagentes con TinyClaw</h1>
+<p class="text-gray-300 text-lg">Orquestación de agentes especializados, comunicación asíncrona y división inteligente de responsabilidades.</p>
+</div>
+</div>
+<main class="max-w-4xl mx-auto px-4 py-10">
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">1</span>
+<h2 class="text-2xl font-bold text-white">¿Qué es la orquestación multiagente?</h2>
+</div>
+<p class="text-gray-300 mb-4">La orquestación multiagente es el patrón arquitectónico en el que un <strong class="text-white">agente orquestador</strong> descompone tareas complejas y distribuye subtareas entre agentes especializados.</p>
+<div class="bg-teal-900/30 border border-teal-500/30 rounded-xl p-5 mb-4">
+<div class="font-mono text-sm text-gray-300 leading-relaxed">
+<div class="text-gray-500"># Flujo de una tarea multiagente</div>
+<div>Usuario: «Crea un informe sobre las tendencias de IA»</div>
+<div class="mt-2 text-teal-400">[Orquestador]</div>
+<div>  ├─ ResearchAgent: buscar artículos y datos</div>
+<div>  ├─ AnalysisAgent: identificar patrones</div>
+<div>  ├─ WriteAgent: redactar secciones</div>
+<div>  └─ ReviewAgent: revisar y dar formato</div>
+<div class="mt-2 text-teal-400">[Resultado]</div>
+<div>  └─ Informe consolidado → Usuario</div>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">2</span>
+<h2 class="text-2xl font-bold text-white">¿Por qué TinyClaw para múltiples agentes?</h2>
+</div>
+<p class="text-gray-300 mb-4">TinyClaw fue diseñado para la orquestación local sin infraestructura en la nube. Todos los agentes se ejecutan en el mismo proceso de Python y comparten memoria mediante SQLite.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+<div class="text-teal-400 font-semibold mb-2">Ventajas</div>
+<ul class="text-gray-300 text-sm space-y-1">
+<li>· Latencia mínima (comunicación dentro del proceso)</li>
+<li>· Sin costo de red entre agentes</li>
+<li>· Depuración simplificada (todo en el mismo log)</li>
+</ul>
+</div>
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+<div class="text-gray-400 font-semibold mb-2">Limitaciones</div>
+<ul class="text-gray-300 text-sm space-y-1">
+<li>· Limitado por la CPU/RAM de una máquina</li>
+<li>· No escala horizontalmente</li>
+<li>· Para escalar: usa Celery o Ray</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">3</span>
+<h2 class="text-2xl font-bold text-white">Arquitectura Hub-and-Spoke</h2>
+</div>
+<p class="text-gray-300 mb-4">El patrón principal de TinyClaw: un orquestador central (Hub) que conoce todos los agentes disponibles (Spokes) y decide cuál usar para cada subtarea.</p>
+<div class="bg-gray-800 rounded-xl p-5 mb-4 font-mono text-sm">
+<div class="text-gray-500 mb-2"># orchestrator.py</div>
+<div class="text-blue-400">class</div><span class="text-yellow-400"> Orquestador</span><span class="text-gray-300">:</span>
+<div class="text-gray-300">  def __init__(self):</div>
+<div class="text-gray-300">    self.agents = {}</div>
+<div class="text-gray-300">    self.queue = asyncio.Queue()</div>
+<div class="text-gray-300 mt-2">  def register(self, name, agent):</div>
+<div class="text-gray-300">    self.agents[name] = agent</div>
+<div class="text-gray-300 mt-2">  async def dispatch(self, task):</div>
+<div class="text-gray-300">    agent_name = self.route(task)</div>
+<div class="text-gray-300">    return await self.agents[agent_name].run(task)</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">4</span>
+<h2 class="text-2xl font-bold text-white">Comunicación Asíncrona entre Agentes</h2>
+</div>
+<p class="text-gray-300 mb-4">Los agentes se comunican mediante mensajes tipados en colas asyncio. Cada mensaje tiene un tipo, un payload y un correlation_id para rastrear el contexto.</p>
+<div class="bg-gray-800 rounded-xl p-5 mb-4 font-mono text-sm">
+<div class="text-gray-500 mb-2"># message.py</div>
+<div class="text-blue-400">from</div><span class="text-white"> dataclasses </span><span class="text-blue-400">import</span><span class="text-gray-300"> dataclass</span>
+<div class="text-yellow-400 mt-2">@dataclass</div>
+<div class="text-blue-400">class</div><span class="text-yellow-400"> AgentMessage</span><span class="text-gray-300">:</span>
+<div class="text-gray-300">  type: str       <span class="text-gray-500"># "research", "write", "review"</span></div>
+<div class="text-gray-300">  payload: Any</div>
+<div class="text-gray-300">  correlation_id: str</div>
+<div class="text-gray-300">  priority: int = 5  <span class="text-gray-500"># 1=alta, 10=baja</span></div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">5</span>
+<h2 class="text-2xl font-bold text-white">Especialización y división de tareas</h2>
+</div>
+<p class="text-gray-300 mb-4">Cada agente especializado tiene su propio SOUL.md, herramientas específicas y un modelo de IA adecuado para su función.</p>
+<div class="bg-teal-900/30 border border-teal-500/30 rounded-xl p-5 mb-4">
+<div class="text-teal-400 font-semibold mb-3">Agentes típicos en un sistema TinyClaw</div>
+<div class="space-y-3">
+<div class="flex gap-3"><span class="w-28 text-teal-400 text-sm font-medium flex-shrink-0">ResearchAgent</span><span class="text-gray-300 text-sm">Busca en la web, lee documentos y extrae datos. Usa Claude 3.5 Sonnet.</span></div>
+<div class="flex gap-3"><span class="w-28 text-teal-400 text-sm font-medium flex-shrink-0">CodeAgent</span><span class="text-gray-300 text-sm">Escribe y ejecuta código Python. Usa Claude 3.5 Sonnet.</span></div>
+<div class="flex gap-3"><span class="w-28 text-teal-400 text-sm font-medium flex-shrink-0">WriteAgent</span><span class="text-gray-300 text-sm">Redacta textos largos y estructurados. Usa GPT-4o.</span></div>
+<div class="flex gap-3"><span class="w-28 text-teal-400 text-sm font-medium flex-shrink-0">ReviewAgent</span><span class="text-gray-300 text-sm">Critica, revisa y califica la calidad. Usa Llama local para reducir costos.</span></div>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">6</span>
+<h2 class="text-2xl font-bold text-white">Monitoreo y depuración multiagente</h2>
+</div>
+<p class="text-gray-300 mb-4">Depurar sistemas multiagente es un desafío sin las herramientas adecuadas. TinyClaw implementa la propagación de trace_id y un dashboard de monitoreo en tiempo real.</p>
+<div class="bg-gray-800 rounded-xl p-5 mb-4 font-mono text-sm">
+<div class="text-gray-500 mb-2"># monitor.py</div>
+<div class="text-blue-400">class</div><span class="text-yellow-400"> AgentMonitor</span><span class="text-gray-300">:</span>
+<div class="text-gray-300">  metrics = defaultdict(list)</div>
+<div class="text-gray-300 mt-2">  def record(self, agent, duration, tokens, success):</div>
+<div class="text-gray-300">    self.metrics[agent].append({</div>
+<div class="text-gray-300">      "ts": time.time(), "dur": duration,</div>
+<div class="text-gray-300">      "tokens": tokens, "ok": success</div>
+<div class="text-gray-300">    })</div>
+</div>
+<div class="bg-teal-900/30 border border-teal-500/30 rounded-xl p-4">
+<div class="text-teal-400 font-semibold mb-2">Métricas esenciales por agente</div>
+<div class="grid grid-cols-2 gap-2 text-sm text-gray-300">
+<div>· Latencia promedio por tarea</div>
+<div>· Tasa de éxito/fallo</div>
+<div>· Costo total de tokens</div>
+<div>· Tamaño de la cola (backlog)</div>
+</div>
+</div>
+</section>
+<div class="flex justify-start gap-3 mt-10 pt-8 border-t border-gray-800">
+<a class="px-5 py-2.5 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-medium transition-colors" href="index.html">← Volver a la Ruta 5</a>
+</div>
+</main>
+<footer class="border-t border-gray-800 py-6 mt-10">
+<div class="max-w-4xl mx-auto px-4 text-center text-sm text-gray-500">
+      Curso INTELECTO · <a class="text-sky-400 hover:underline" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+</footer>
+<script>
+    
+  const html = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  if (localStorage.getItem('theme') === 'light') html.classList.add('light');
+  btn.addEventListener('click', () => {
+    html.classList.toggle('light');
+    localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
+  });
+
+  </script>
+</body>
+</html>

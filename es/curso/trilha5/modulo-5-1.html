@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 5.1 — Los 6 patrones de arquitectura Claw | INTELECTO</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+
+  .light body { background-color: #f8fafc; color: #1e293b; }
+  .light .bg-gray-900 { background-color: #ffffff !important; }
+  .light .bg-gray-800 { background-color: #f1f5f9 !important; }
+  .light .bg-gray-700 { background-color: #e2e8f0 !important; }
+  .light .text-white { color: #1e293b !important; }
+  .light .text-gray-100 { color: #1e293b !important; }
+  .light .text-gray-200 { color: #334155 !important; }
+  .light .text-gray-300 { color: #475569 !important; }
+  .light .text-gray-400 { color: #64748b !important; }
+  .light .border-gray-700 { border-color: #e2e8f0 !important; }
+  .light .border-gray-600 { border-color: #cbd5e1 !important; }
+  .light .bg-teal-900\/30 { background-color: rgba(20,184,166,0.1) !important; }
+  .light .bg-teal-500\/10 { background-color: rgba(20,184,166,0.08) !important; }
+  .light .border-teal-500\/30 { border-color: rgba(20,184,166,0.3) !important; }
+
+  </style>
+<link href="https://inematds.github.io/intelecto-curso/curso/trilha5/modulo-5-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/en/curso/trilha5/modulo-5-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/es/curso/trilha5/modulo-5-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-gray-900 text-white min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur sticky top-0 z-40">
+<div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="index.html">← Ruta 5</a>
+<span class="text-gray-600">|</span>
+<span class="text-teal-400 font-semibold">Módulo 5.1</span>
+</div>
+<button class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 transition-colors" id="themeToggle">☀️/🌙</button>
+</div>
+</header>
+<div class="bg-gradient-to-br from-teal-900/40 to-gray-900 border-b border-gray-800 py-10">
+<div class="max-w-4xl mx-auto px-4">
+<span class="text-teal-400 text-sm font-semibold uppercase tracking-wider">Módulo 5.1</span>
+<h1 class="text-3xl font-bold text-white mt-2 mb-3">Los 6 patrones de arquitectura Claw</h1>
+<p class="text-gray-300 text-lg">OpenClaw, ZeroClaw, NanoClaw, TinyClaw, IronClaw y Agent Zero: cuándo y por qué usar cada patrón.</p>
+</div>
+</div>
+<main class="max-w-4xl mx-auto px-4 py-10">
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">1</span>
+<h2 class="text-2xl font-bold text-white">¿Qué es una arquitectura Claw?</h2>
+</div>
+<p class="text-gray-300 mb-4">El nombre «Claw» (garra) representa la capacidad de cada patrón de <strong class="text-white">tomar</strong> un conjunto específico de trade-offs entre velocidad, seguridad, autonomía y costo.</p>
+<div class="bg-teal-900/30 border border-teal-500/30 rounded-xl p-5 mb-4">
+<div class="text-teal-400 font-semibold mb-3">Los 6 patrones Claw</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm">
+<thead><tr class="text-gray-400 border-b border-gray-700">
+<th class="text-left py-2 pr-4">Estándar</th>
+<th class="text-left py-2 pr-4">Enfoque</th>
+<th class="text-left py-2 pr-4">Complejidad</th>
+<th class="text-left py-2">Caso de uso</th>
+</tr></thead>
+<tbody class="text-gray-300">
+<tr class="border-b border-gray-800"><td class="py-2 pr-4 text-teal-400 font-medium">OpenClaw</td><td class="pr-4">Máxima productividad</td><td class="pr-4">Baja</td><td>Uso personal sin restricciones</td></tr>
+<tr class="border-b border-gray-800"><td class="py-2 pr-4 text-teal-400 font-medium">ZeroClaw</td><td class="pr-4">Cero dependencias</td><td class="pr-4">Baja</td><td>Sin conexión, privacidad total</td></tr>
+<tr class="border-b border-gray-800"><td class="py-2 pr-4 text-teal-400 font-medium">NanoClaw</td><td class="pr-4">Minimalismo extremo</td><td class="pr-4">Mínima</td><td>Edge, IoT, Raspberry Pi</td></tr>
+<tr class="border-b border-gray-800"><td class="py-2 pr-4 text-teal-400 font-medium">TinyClaw</td><td class="pr-4">Multiagentes locales</td><td class="pr-4">Media</td><td>Equipos de agentes</td></tr>
+<tr class="border-b border-gray-800"><td class="py-2 pr-4 text-teal-400 font-medium">IronClaw</td><td class="pr-4">Seguridad Zero-Trust</td><td class="pr-4">Alta</td><td>Entornos críticos</td></tr>
+<tr><td class="py-2 pr-4 text-teal-400 font-medium">Agent Zero</td><td class="pr-4">Autoevolución</td><td class="pr-4">Alta</td><td>Sistemas autónomos</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">2</span>
+<h2 class="text-2xl font-bold text-white">¿Por qué aprender los 6 patrones?</h2>
+</div>
+<p class="text-gray-300 mb-4">Conocer un solo patrón es como tener un solo martillo. Cada Claw resuelve un conjunto distinto de problemas, y elegir mal puede significar semanas de retrabajo.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+<div class="text-teal-400 font-semibold mb-2">Ventajas de conocerlos a todos</div>
+<ul class="text-gray-300 text-sm space-y-1">
+<li>· Elección fundamentada para cada proyecto</li>
+<li>· Migración fluida entre estándares</li>
+<li>· Reutilización de componentes entre Claws</li>
+</ul>
+</div>
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+<div class="text-red-400 font-semibold mb-2">Costos de elegir mal</div>
+<ul class="text-gray-300 text-sm space-y-1">
+<li>· IronClaw en un prototipo = lentitud innecesaria</li>
+<li>· OpenClaw en producción = vulnerabilidad crítica</li>
+<li>· NanoClaw para varios agentes = imposible de escalar</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">3</span>
+<h2 class="text-2xl font-bold text-white">OpenClaw — El asistente abierto</h2>
+</div>
+<p class="text-gray-300 mb-4">OpenClaw es el patrón estándar de INTELECTO: acceso completo al sistema de archivos, Internet y herramientas. Ideal para uso personal cuando tú eres el único usuario.</p>
+<div class="bg-gray-800 rounded-xl p-5 mb-4 font-mono text-sm">
+<div class="text-gray-500 mb-2"># OpenClaw config (intelecto.yaml)</div>
+<div class="text-green-400">architecture: openclaw</div>
+<div class="text-gray-300">security:</div>
+<div class="text-gray-300">  sandbox: false</div>
+<div class="text-gray-300">  file_access: unrestricted</div>
+<div class="text-gray-300">  network: unrestricted</div>
+<div class="text-gray-300">tools:</div>
+<div class="text-gray-300">  auto_discover: true</div>
+<div class="text-gray-300">  require_approval: false</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">4</span>
+<h2 class="text-2xl font-bold text-white">ZeroClaw y NanoClaw — Máxima ligereza</h2>
+</div>
+<p class="text-gray-300 mb-4"><strong class="text-white">ZeroClaw</strong> elimina todas las dependencias externas: funciona 100% sin conexión. <strong class="text-white">NanoClaw</strong> va más allá: un único archivo Python de menos de 500 líneas.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+<div class="text-teal-400 font-semibold mb-3">ZeroClaw</div>
+<ul class="text-gray-300 text-sm space-y-2">
+<li><span class="text-gray-500">Modelo:</span> Ollama local (Llama 3, Mistral)</li>
+<li><span class="text-gray-500">Memoria:</span> SQLite local</li>
+<li><span class="text-gray-500">Canales:</span> Terminal o interfaz web local</li>
+</ul>
+</div>
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+<div class="text-teal-400 font-semibold mb-3">NanoClaw</div>
+<ul class="text-gray-300 text-sm space-y-2">
+<li><span class="text-gray-500">Tamaño:</span> menos de 500 líneas de Python</li>
+<li><span class="text-gray-500">Dependencias:</span> Solo stdlib + una librería de LLM</li>
+<li><span class="text-gray-500">Objetivo:</span> Raspberry Pi, VPS mínimo</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">5</span>
+<h2 class="text-2xl font-bold text-white">IronClaw — Máxima seguridad</h2>
+</div>
+<p class="text-gray-300 mb-4">IronClaw implementa Zero-Trust completo: cada operación se audita, las herramientas se ejecutan en un sandbox aislado y ninguna acción se realiza sin aprobación explícita para operaciones de alto riesgo.</p>
+<div class="bg-teal-900/30 border border-teal-500/30 rounded-xl p-5 mb-4">
+<div class="text-teal-400 font-semibold mb-3">Stack de seguridad IronClaw</div>
+<div class="space-y-2 text-sm">
+<div class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400 font-bold text-xs">5</span><span class="text-gray-300">Registro de auditoría inmutable con firma criptográfica</span></div>
+<div class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400 font-bold text-xs">4</span><span class="text-gray-300">Aprobación humana para operaciones destructivas</span></div>
+<div class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400 font-bold text-xs">3</span><span class="text-gray-300">Sandbox WASM para ejecutar código</span></div>
+<div class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400 font-bold text-xs">2</span><span class="text-gray-300">Pipeline de detección de inyección de prompt</span></div>
+<div class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400 font-bold text-xs">1</span><span class="text-gray-300">Cifrado Fernet en reposo y en tránsito</span></div>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-bold text-sm">6</span>
+<h2 class="text-2xl font-bold text-white">Agent Zero — Autoconstrucción y metacognición</h2>
+</div>
+<p class="text-gray-300 mb-4">El patrón más avanzado: agentes que analizan su propio desempeño, identifican brechas y crean o modifican sus propias herramientas y memorias para mejorar progresivamente.</p>
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-5 mb-4">
+<div class="text-white font-semibold mb-3">Bucle de Autoevolución</div>
+<div class="flex items-center gap-2 text-sm flex-wrap">
+<span class="px-3 py-1 bg-teal-500/20 rounded-full text-teal-400">Ejecutar</span>
+<span class="text-gray-600">→</span>
+<span class="px-3 py-1 bg-teal-500/20 rounded-full text-teal-400">Observar</span>
+<span class="text-gray-600">→</span>
+<span class="px-3 py-1 bg-teal-500/20 rounded-full text-teal-400">Evaluar</span>
+<span class="text-gray-600">→</span>
+<span class="px-3 py-1 bg-teal-500/20 rounded-full text-teal-400">Mejorar</span>
+<span class="text-gray-600">→</span>
+<span class="px-3 py-1 bg-teal-500/20 rounded-full text-teal-400">Persistir</span>
+</div>
+</div>
+<div class="bg-teal-900/30 border border-teal-500/30 rounded-xl p-4">
+<div class="text-teal-400 font-semibold mb-2">Salvaguardas obligatorias</div>
+<ul class="text-gray-300 text-sm space-y-1">
+<li>· Límite de modificaciones automáticas por período</li>
+<li>· Aprobación humana antes de realizar cambios en SOUL.md</li>
+<li>· Reversión automática si las métricas empeoran</li>
+</ul>
+</div>
+</section>
+<div class="flex justify-start gap-3 mt-10 pt-8 border-t border-gray-800">
+<a class="px-5 py-2.5 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-medium transition-colors" href="index.html">← Volver a la Ruta 5</a>
+</div>
+</main>
+<footer class="border-t border-gray-800 py-6 mt-10">
+<div class="max-w-4xl mx-auto px-4 text-center text-sm text-gray-500">
+      Curso INTELECTO · <a class="text-sky-400 hover:underline" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+</footer>
+<script>
+    
+  const html = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  if (localStorage.getItem('theme') === 'light') html.classList.add('light');
+  btn.addEventListener('click', () => {
+    html.classList.toggle('light');
+    localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
+  });
+
+  </script>
+</body>
+</html>

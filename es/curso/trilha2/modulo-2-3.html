@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 2.3 — Memoria y conocimiento | INTELECTO</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>body{font-family:'Inter',sans-serif;}.dark body{background-color:#111827;}html:not(.dark) body{background-color:#f8fafc;}html:not(.dark) .bg-dark-900{background-color:#ffffff;}html:not(.dark) .bg-dark-800{background-color:#f9fafb;}html:not(.dark) .bg-dark-700{background-color:#f3f4f6;}html:not(.dark) .bg-dark-600{background-color:#e5e7eb;}html:not(.dark) .text-neutral-100{color:#111827;}html:not(.dark) .text-neutral-300{color:#4b5563;}html:not(.dark) .text-neutral-400{color:#6b7280;}html:not(.dark) .text-neutral-500{color:#9ca3af;}html:not(.dark) .border-dark-600{border-color:#d1d5db;}html:not(.dark) .text-blue-400{color:#2563eb;}html:not(.dark) .bg-blue-500\/20{background-color:rgba(37,99,235,0.12);}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,0.25);}html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important;}html:not(.dark) .text-primary{color:#a16207;}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,0.08);}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,0.25);}html:not(.dark) .text-sky-400{color:#0369a1;}html:not(.dark) .text-yellow-400{color:#a16207;}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7;}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,0.95);}</style>
+<link href="https://inematds.github.io/intelecto-curso/curso/trilha2/modulo-2-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/en/curso/trilha2/modulo-2-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/es/curso/trilha2/modulo-2-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2/modulo-2-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14"><div class="flex items-center space-x-4"><a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html"><span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">INTELECTO</span></a><span class="text-neutral-600">|</span><a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a></div><div class="flex items-center space-x-2"><a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/20" href="index.html">T2 Identidad</a><button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle"><svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg><svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg></button></div></div></div></nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4"><div class="flex items-center space-x-2 text-sm text-neutral-400"><a class="hover:text-blue-400" href="../../index.html">Inicio</a><span>/</span><a class="hover:text-blue-400" href="index.html">Ruta 2</a><span>/</span><span class="text-blue-400">Módulo 2.3</span></div></nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.3</span><h1 class="text-3xl sm:text-4xl font-bold mb-4">🧠 Memoria y conocimiento</h1><p class="text-lg text-neutral-400 max-w-3xl">SQLite FTS5 para búsquedas de texto completo, BM25 para clasificar por relevancia, sistema de 2 capas, categorías de memoria y compactación automática.</p><div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl"><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Temas</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">60</div><div class="text-xs text-neutral-400">Minutos</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Interm.</div><div class="text-xs text-neutral-400">Nivel</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Técnico</div><div class="text-xs text-neutral-400">Tipo</div></div></div></div></header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span><h2 class="text-2xl font-bold">🗃 SQLite FTS5 — búsqueda de texto completo</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">FTS5 (Full-Text Search versión 5) es un módulo de SQLite que convierte la base de datos en un motor de búsqueda completo. <strong class="text-blue-400">Cero configuración, cero servidor, cero costo</strong> — solo SQLite con superpoderes de búsqueda.</p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4">🏗 Esquema de la memoria</h3>
+<div class="font-mono text-sm bg-dark-800 rounded-lg p-4 space-y-1">
+<div class="text-blue-400">CREATE VIRTUAL TABLE memories USING fts5(</div>
+<div class="text-neutral-300">    content,          -- Texto del hecho/memoria</div>
+<div class="text-neutral-300">    category,         -- fact | conversation | solution</div>
+<div class="text-neutral-300">    created_at,       -- Timestamp ISO</div>
+<div class="text-neutral-300">    metadata,         -- JSON con contexto extra</div>
+<div class="text-neutral-300">    tokenize = 'unicode61'</div>
+<div class="text-blue-400">);</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> ¿Por qué no usar embeddings + vector DB?</h3>
+<p class="text-neutral-300">Las bases de datos vectoriales son más precisas para la búsqueda semántica, pero añaden complejidad y costos (modelo de embeddings + base de datos aparte). Para un asistente personal con vocabulario consistente, FTS5 + BM25 ofrece un rendimiento excelente con complejidad cero.</p>
+</div>
+</section>
+<section class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span><h2 class="text-2xl font-bold">📊 BM25 — Clasificación por relevancia</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">BM25 (Best Match 25) es el algoritmo de clasificación que SQLite FTS5 usa de forma predeterminada. Es el mismo algoritmo que usan Elasticsearch y Solr. <strong class="text-blue-400">Da como resultado recuerdos clasificados según su relevancia real</strong>, no por fecha de creación.</p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4">🔍 Consulta con BM25</h3>
+<div class="font-mono text-sm bg-dark-800 rounded-lg p-4 space-y-1">
+<div class="text-neutral-500">-- Busca recuerdos sobre Python, ordenados por relevancia</div>
+<div class="text-blue-400">SELECT content, category, bm25(memories) as score</div>
+<div class="text-blue-400">FROM memories</div>
+<div class="text-blue-400">WHERE memories MATCH 'Python FastAPI'</div>
+<div class="text-blue-400">ORDER BY score</div>
+<div class="text-blue-400">LIMIT 5;</div>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span><h2 class="text-2xl font-bold">🏗 Sistema de 2 capas de memoria</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">La arquitectura de memoria resuelve el problema de <strong class="text-blue-400">ventana de contexto</strong>: no puedes poner toda la memoria en el system prompt. La solución son 2 capas con propósitos distintos.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-dark-800 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-3">📄 Capa 1: MEMORY.md</h4>
+<p class="text-sm text-neutral-400 mb-3">Hechos estáticos de bootstrap. Siempre en el system prompt. Ejemplo: nombre del usuario, stack tecnológico, empresa, zona horaria.</p>
+<div class="font-mono text-xs bg-dark-800 border border-dark-600 rounded p-2 text-neutral-400">Tamaño recomendado: &lt; 500 tokens</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h4 class="font-bold text-emerald-400 mb-3">🗄 Capa 2: memory.db</h4>
+<p class="text-sm text-neutral-400 mb-3">Hechos dinámicos e historial. Se buscan por relevancia cuando es necesario. Puede crecer indefinidamente: solo los 5 más relevantes se incluyen en el contexto.</p>
+<div class="font-mono text-xs bg-dark-800 border border-dark-600 rounded p-2 text-neutral-400">Tamaño: ilimitado (búsqueda por relevancia)</div>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span><h2 class="text-2xl font-bold">🏷 Categorías de memoria</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Cada entrada en memory.db tiene una <strong class="text-blue-400">categoría</strong> que permite búsquedas más precisas. Cuando Jarvis necesita contexto, filtra por la categoría más relevante para la pregunta actual.</p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4"><div class="flex-shrink-0 w-20 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xs flex items-center justify-center">fact</div><div class="flex-1 bg-dark-800 rounded-xl p-4 border border-dark-600"><h4 class="font-semibold mb-1">Hechos sobre el usuario y el mundo</h4><p class="text-sm text-neutral-400">Preferencias, configuraciones, información sobre proyectos. Ej.: "El usuario usa PostgreSQL 16 en producción"</p></div></div>
+<div class="flex items-start space-x-4"><div class="flex-shrink-0 w-20 h-10 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xs flex items-center justify-center">conversation</div><div class="flex-1 bg-dark-800 rounded-xl p-4 border border-dark-600"><h4 class="font-semibold mb-1">Fragmentos de conversaciones importantes</h4><p class="text-sm text-neutral-400">Decisiones tomadas y contexto de proyectos discutidos. Ej.: "En 2026-04, decidimos usar Redis para las sesiones"</p></div></div>
+<div class="flex items-start space-x-4"><div class="flex-shrink-0 w-20 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xs flex items-center justify-center">solution</div><div class="flex-1 bg-dark-800 rounded-xl p-4 border border-dark-600"><h4 class="font-semibold mb-1">Soluciones que funcionaron</h4><p class="text-sm text-neutral-400">Cómo se resolvieron los problemas. Jarvis consulta esta información antes de sugerir soluciones. Ej.: "Docker build lento → agregar .dockerignore lo resolvió"</p></div></div>
+</div>
+</section>
+<section class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span><h2 class="text-2xl font-bold">🔍 Deduplicación automática</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Sin deduplicación, la memoria acumula variaciones del mismo hecho. El <strong class="text-blue-400">store.py implementa una operación upsert inteligente</strong>: antes de guardar, busca hechos similares y actualiza el existente si la similitud es alta.</p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4">🔄 Algoritmo de deduplicación</h3>
+<div class="space-y-2 text-sm text-neutral-300">
+<div class="flex items-start space-x-3"><div class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">1</div><span>Llega un nuevo hecho para guardarlo</span></div>
+<div class="flex items-start space-x-3"><div class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">2</div><span>FTS5 busca hechos similares en la misma categoría</span></div>
+<div class="flex items-start space-x-3"><div class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">3</div><span>Si score BM25 &gt; threshold (0.7): UPDATE del hecho existente</span></div>
+<div class="flex items-start space-x-3"><div class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">4</div><span>Si score &lt; threshold: INSERT de nuevo hecho</span></div>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span><h2 class="text-2xl font-bold">🗜 Compactación automática</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Una memoria que crece sin límite se vuelve lenta de buscar. <strong class="text-blue-400">Compactación automática</strong> resume periódicamente las entradas antiguas en hechos más concisos, manteniendo la relevancia sin consumir espacio de forma descontrolada.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6"><h4 class="font-bold text-emerald-400 mb-4">✓ Qué compactar</h4><ul class="space-y-2 text-sm text-neutral-300"><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Conversaciones de más de 30 días</span></li><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Hechos redundantes sobre el mismo tema</span></li><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Historial de decisiones anteriores</span></li></ul></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6"><h4 class="font-bold text-red-400 mb-4">✗ Qué preservar</h4><ul class="space-y-2 text-sm text-neutral-300"><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Soluciones que funcionaron (alto valor)</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Preferencias fundamentales del usuario</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Hechos consultados con frecuencia</span></li></ul></div>
+</div>
+</section>
+<section class="mb-12">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del Módulo 2.3</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong>SQLite FTS5</strong><span class="text-neutral-400"> — Búsqueda full-text nativa, cero dependencias externas</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong>BM25</strong><span class="text-neutral-400"> — Ranking por relevancia real, no por fecha</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong>2 capas</strong><span class="text-neutral-400"> — MEMORY.md (bootstrap estático) + memory.db (historial dinámico)</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong>Categorías</strong><span class="text-neutral-400"> — fact, conversation, solution para búsquedas precisas</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong>Deduplicación</strong><span class="text-neutral-400"> — El upsert inteligente evita duplicados mediante similitud BM25</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong>Compactación</strong><span class="text-neutral-400"> — La resumición de memorias antiguas mantiene la búsqueda eficiente</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8"><h3 class="font-semibold text-blue-400 mb-2">Próxima ruta:</h3><p class="text-neutral-300">Ruta 3 — Seguridad Zero-Trust: la ruta más importante del curso</p></div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-2.html">← Módulo 2.2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha3/index.html">Ruta 3: Seguridad →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-8"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>INTELECTO — Módulo 2.3: Memoria y conocimiento · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p></div></footer>
+<script>const themeToggle=document.getElementById('theme-toggle');const themeToggleDarkIcon=document.getElementById('theme-toggle-dark-icon');const themeToggleLightIcon=document.getElementById('theme-toggle-light-icon');const html=document.documentElement;if(localStorage.getItem('theme')==='light'){themeToggleDarkIcon.classList.remove('hidden');html.classList.remove('dark');}else{themeToggleLightIcon.classList.remove('hidden');}themeToggle.addEventListener('click',()=>{themeToggleDarkIcon.classList.toggle('hidden');themeToggleLightIcon.classList.toggle('hidden');html.classList.toggle('dark');localStorage.setItem('theme',html.classList.contains('dark')?'dark':'light');});</script>
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Track 1 — Fundamentals | INTELECTO</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5,150,105,0.18); }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+  </style>
+<link href="https://inematds.github.io/intelecto-curso/curso/trilha1/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/en/curso/trilha1/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/es/curso/trilha1/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span>
+<span class="font-bold text-lg hidden sm:inline">INTELECTO</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html">
+<span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">
+<span class="sm:hidden">T2</span><span class="hidden sm:inline">Identity</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html">
+<span class="sm:hidden">T3</span><span class="hidden sm:inline">Security</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors hidden sm:block" href="../trilha4/index.html">
+<span>Integrations</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors hidden sm:block" href="../trilha5/index.html">
+<span>Architectures</span>
+</a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors hidden sm:block" href="../trilha6/index.html">
+<span>Final Project</span>
+</a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">TRACK 1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧠 INTELECTO Fundamentals</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Understand the “no bloated frameworks” philosophy and the architecture of the 5 components, then configure your environment from scratch until you send your first message.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">3</div>
+<div class="text-xs text-neutral-400">Modules</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">18</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">~3h</div>
+<div class="text-xs text-neutral-400">Duration</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">Basic</div>
+<div class="text-xs text-neutral-400">Level</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="mb-4 text-sm text-neutral-500 font-semibold uppercase tracking-wide">Detailed Content</div>
+<!-- Módulo 1.1 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold">1.1</span>
+<span class="text-xs text-neutral-500">~60 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🧠 What INTELECTO Is</h3>
+<p class="text-neutral-400 text-sm">“No bloated frameworks” philosophy, the feature grocery store concept, and why building from scratch makes sense.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🤔</span>
+<div><span class="font-medium">The Problem with Bloated Frameworks</span><span class="text-neutral-500 text-sm ml-2">- LangChain vs. building your own</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">Frameworks like LangChain and CrewAI abstract everything, but add unnecessary layers of complexity that make debugging and customization a nightmare.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Understanding the trade-offs lets you consciously choose when to use a framework and when to build from scratch — a rare skill in the market.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Abstraction tax, vendor lock-in, zero-dependency philosophy, full control of the code.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🛒</span>
+<div><span class="font-medium">The Feature Grocery Store</span><span class="text-neutral-500 text-sm ml-2">- The 8 corridors of INTELECTO</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">INTELECTO is organized like a grocery store: you go to each aisle (security, memory, channels...) and pick only what you need for your assistant.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">This mental model prevents over-engineering. You don't install what you won't use, keeping the system lightweight, auditable, and easy to maintain.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">8 functional corridors, modular composition, feature flags, framework ingredients.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">⚔</span>
+<div><span class="font-medium">INTELECTO vs LangChain vs CrewAI</span><span class="text-neutral-500 text-sm ml-2">- Honest comparison</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">An objective analysis of the differences: LangChain has 200+ dependencies, while CrewAI forces a rigid agent model. INTELECTO has zero required dependencies beyond Python.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Being able to technically defend your choice is essential for teams and clients. You need the numbers and arguments.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Package size, startup time, debugging latency, maintenance cost, learning curve.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🎯</span>
+<div><span class="font-medium">The Jarvis Concept</span><span class="text-neutral-500 text-sm ml-2">- Personal assistant vs. generic chatbot</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">Jarvis knows its creator, remembers previous conversations, acts proactively, and performs tasks in the real world. A generic chatbot only answers questions.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Sets the right level of ambition. You're building something that will grow with you, not a throwaway demo.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Persistent identity, long-term memory, real-world action, deep personalization.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">📦</span>
+<div><span class="font-medium">Project Key Files</span><span class="text-neutral-500 text-sm ml-2">- The repository map</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">Each file has a clear responsibility: context.py builds the system prompt, loop.py manages the reasoning cycle, secrets.py protects credentials.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Knowing the map before diving into the code saves hours of aimless orientation. Every change happens in the right place.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">context.py, loop.py, secrets.py, safety.py, store.py, providers/base.py, channels/base.py, tools/base.py.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🚀</span>
+<div><span class="font-medium">Why Build from Scratch in 2026</span><span class="text-neutral-500 text-sm ml-2">- The right time to move beyond frameworks</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">With mature and stable LLM APIs, the abstraction cost of frameworks outweighs the benefits for serious projects. Pure Python + clear contracts is enough.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The market is saturated with developers who only know how to use wrappers. Those who understand the fundamentals have a real competitive advantage.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">API maturity, abstraction cost, competitive advantage, interface contracts, long-term maintenance.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-1-1')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors" href="modulo-1-1.html">View Full</a>
+</div>
+</div>
+<!-- Módulo 1.2 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold">1.2</span>
+<span class="text-xs text-neutral-500">~60 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🏗 Overall Architecture</h3>
+<p class="text-neutral-400 text-sm">How the 5 components connect and the complete flow of a message from Telegram to the response.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🔄</span>
+<div><span class="font-medium">The 5 Fundamental Components</span><span class="text-neutral-500 text-sm ml-2">- Agent, Providers, Channels, Memory, Tools</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">INTELECTO has exactly 5 responsibilities: the central agent that thinks, the providers that access LLMs, the channels that receive messages, the memory that persists context, and the tools that act in the world.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Each component has a clear boundary. Knowing where one ends and another begins is what lets you add features without breaking the system.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Separation of concerns, interface contracts, dependency injection, modular composition.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📨</span>
+<div><span class="font-medium">Message Flow: From Telegram to Response</span><span class="text-neutral-500 text-sm ml-2">- Complete lifecycle of a request</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">User → Telegram → Channel.receive() → Agent.loop() → Memory.search() → Provider.chat() → Tool.execute() → Memory.store() → Channel.send() → User. Each arrow is a function call with a defined contract.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Visualizing the complete flow makes it possible to identify where to debug when something fails and where to optimize when it's slow.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Processing pipeline, async/await, cascading error handling, observability.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🔁</span>
+<div><span class="font-medium">The Agent Loop — Max 5 Rounds</span><span class="text-neutral-500 text-sm ml-2">- How AI thinks in cycles</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">loop.py implements a reasoning cycle: receives a message → thinks → decides whether to use a tool or respond → if it used a tool, thinks again with the result → up to 5 iterations for safety.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The 5-round limit prevents infinite loops and runaway costs. Understanding the cycle lets you adjust reasoning depth for each use case.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">ReAct pattern, tool calling, max iterations, cost per round, circuit breaker for loops.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">📁</span>
+<div><span class="font-medium">The Workspace — SOUL, AGENTS, MEMORY</span><span class="text-neutral-500 text-sm ml-2">- Markdown configuration</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">The workspace/ directory contains Markdown files that define the personality (SOUL.md), behavior rules (AGENTS.md), and bootstrap facts (MEMORY.md) injected into every system prompt.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Every AI customization starts here. Changing Jarvis doesn’t require changing code — only the workspace files.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Configuration as code, system prompt construction, context injection, SOUL.md as identity.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🧩</span>
+<div><span class="font-medium">Interface Contracts</span><span class="text-neutral-500 text-sm ml-2">- BaseProvider, BaseChannel, BaseTool</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">Each extension category has an abstract base class with required methods. BaseProvider requires async chat(). BaseChannel requires start(), send(), stop(). BaseTool requires name, description, execute().</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Contracts ensure that any implementation works with the rest of the system automatically. It's like a standardized plug — any device that follows the standard works in the outlet.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Abstract base class, duck typing, protocol pattern, plug-and-play architecture.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🗄</span>
+<div><span class="font-medium">Persistence and State</span><span class="text-neutral-500 text-sm ml-2">- What goes in ~/.intelecto/</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">Three critical files in ~/.intelecto/: memory.db (SQLite database with history and facts), .secrets (keys encrypted with Fernet + hardware UUID), and audit.log (record of all actions).</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Understanding where the data lives is essential for backup, migration, and troubleshooting. You should never lose your Jarvis's memory by accident.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Home directory pattern, SQLite portability, encrypted secrets, audit trail, backup strategy.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-1-2')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors" href="modulo-1-2.html">View Full</a>
+</div>
+</div>
+<!-- Módulo 1.3 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold">1.3</span>
+<span class="text-xs text-neutral-500">~60 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">⚙ Environment Setup</h3>
+<p class="text-neutral-400 text-sm">From scratch to a working Jarvis: Python, Docker, OpenRouter, .env, and your first message on Telegram.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🐍</span>
+<div><span class="font-medium">Prerequisites and Python</span><span class="text-neutral-500 text-sm ml-2">- Minimum version and dependencies</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">Python 3.11+ is required. Dependencies are minimal: httpx for async HTTP, python-telegram-bot for the channel, cryptography for Fernet. No LangChain, no CrewAI.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Knowing the actual dependencies lets you audit what’s installed and understand why each package exists in the project.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">venv, minimal requirements.txt, Python 3.11 features, native async.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🔑</span>
+<div><span class="font-medium">OpenRouter Account</span><span class="text-neutral-500 text-sm ml-2">- 100+ models with one key</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">OpenRouter is an LLM proxy that provides access to GPT-4, Claude, Mistral, Llama, and 100+ other models with a single API key and unified billing.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Avoids vendor lock-in with a specific provider. If Anthropic raises its prices, you can switch to Mistral in 10 seconds by changing an environment variable.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">API key management, model routing, cost tracking, fallback strategy, model by task.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">📝</span>
+<div><span class="font-medium">.env Configuration</span><span class="text-neutral-500 text-sm ml-2">- Secure environment variables</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">The .env file defines OPENROUTER_API_KEY, TELEGRAM_BOT_TOKEN, MODEL_NAME, and other parameters without hard-coding them in the code. The .env file NEVER goes into git.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Separating configuration from code is a fundamental security practice. Keys in code are the number one cause of leaks in public repositories.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">12-factor app, .gitignore, python-dotenv, environment variables, secrets management.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🧙</span>
+<div><span class="font-medium">The Setup Wizard</span><span class="text-neutral-500 text-sm ml-2">- Guided interactive setup</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">The setup.py script asks interactive questions: which channel to use? Docker or native? Which default model? Then it configures everything automatically by creating the necessary files.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The wizard eliminates manual configuration errors and ensures nothing required is forgotten. It is the entry point for new users.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Interactive CLI, configuration generation, guided onboarding, input validation.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🐳</span>
+<div><span class="font-medium">Docker vs. Native</span><span class="text-neutral-500 text-sm ml-2">- When to use each approach</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">Docker provides isolation and reproducible deploys. Native deployment has less overhead and makes debugging more direct. Use native for development; use Docker Compose for production.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The choice affects how you debug, back up, and update the system. Understanding the trade-offs avoids surprises in production.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Container isolation, volume mounts, docker-compose.yml, development vs. production.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">📱</span>
+<div><span class="font-medium">First Message on Telegram</span><span class="text-neutral-500 text-sm ml-2">- Full environment validation</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">What is:</span><p class="text-neutral-300 text-sm">The validation moment: run python main.py, open Telegram, send “Hello,” and receive the first response from your Jarvis. If it works, the entire stack is configured correctly.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The initial smoke test validates each component end to end: channel, agent, provider, memory. It is the milestone that separates “configured” from “working.”</p></div>
+<div><span class="text-emerald-400 font-semibold">Key Concepts:</span><p class="text-neutral-300 text-sm">Smoke test, end-to-end validation, BotFather token, webhook vs. polling, first-run debugging.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-1-3')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors" href="modulo-1-3.html">View Full</a>
+</div>
+</div>
+<!-- Navegação -->
+<div class="flex justify-between mt-8">
+<a class="px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../../index.html">← Home</a>
+<a class="px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="../trilha2/index.html">Next Learning Path →</a>
+</div>
+</main>
+<!-- Modais -->
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-1-1" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">1.1</span><span class="font-semibold">What Is INTELECTO</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-1-1.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-1-2" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">1.2</span><span class="font-semibold">General Architecture</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-1-2.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-1-3" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">1.3</span><span class="font-semibold">Environment Setup</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-1-3.html"></iframe>
+</div>
+</div>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>INTELECTO — Track 1: Fundamentals · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    }
+    function closeModal() {
+      document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden'));
+      document.body.style.overflow = 'auto';
+    }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { themeToggleDarkIcon.classList.remove('hidden'); html.classList.remove('dark'); }
+    else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

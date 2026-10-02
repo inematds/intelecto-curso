@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 6.1 — Planning Your Assistant | INTELECTO</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+
+  .light body { background-color: #f8fafc; color: #1e293b; }
+  .light .bg-gray-900 { background-color: #ffffff !important; }
+  .light .bg-gray-800 { background-color: #f1f5f9 !important; }
+  .light .bg-gray-700 { background-color: #e2e8f0 !important; }
+  .light .text-white { color: #1e293b !important; }
+  .light .text-gray-100 { color: #1e293b !important; }
+  .light .text-gray-200 { color: #334155 !important; }
+  .light .text-gray-300 { color: #475569 !important; }
+  .light .text-gray-400 { color: #64748b !important; }
+  .light .border-gray-700 { border-color: #e2e8f0 !important; }
+  .light .border-gray-600 { border-color: #cbd5e1 !important; }
+  .light .bg-rose-900\/30 { background-color: rgba(244,63,94,0.1) !important; }
+  .light .bg-rose-500\/10 { background-color: rgba(244,63,94,0.08) !important; }
+  .light .border-rose-500\/30 { border-color: rgba(244,63,94,0.3) !important; }
+  .light .hover\:bg-rose-900\/30:hover { background-color: rgba(244,63,94,0.1) !important; }
+
+  </style>
+<link href="https://inematds.github.io/intelecto-curso/curso/trilha6/modulo-6-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/en/curso/trilha6/modulo-6-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/es/curso/trilha6/modulo-6-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-gray-900 text-white min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-6-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha6/modulo-6-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur sticky top-0 z-40">
+<div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="index.html">← Track 6</a>
+<span class="text-gray-600">|</span>
+<span class="text-rose-400 font-semibold">Module 6.1</span>
+</div>
+<button class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 transition-colors" id="themeToggle">☀️/🌙</button>
+</div>
+</header>
+<div class="bg-gradient-to-br from-rose-900/40 to-gray-900 border-b border-gray-800 py-10">
+<div class="max-w-4xl mx-auto px-4">
+<span class="text-rose-400 text-sm font-semibold uppercase tracking-wider">Module 6.1</span>
+<h1 class="text-3xl font-bold text-white mt-2 mb-3">Planning Your Assistant</h1>
+<p class="text-gray-300 text-lg">Scope definition, architecture selection, identity design, and build roadmap.</p>
+</div>
+</div>
+<main class="max-w-4xl mx-auto px-4 py-10">
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">1</span>
+<h2 class="text-2xl font-bold text-white">What Is AI Assistant Planning?</h2>
+</div>
+<p class="text-gray-300 mb-4">Planning an AI assistant is different from planning traditional software. You are defining not only functionality, but <strong class="text-white">behavior, identity, and ethical boundaries</strong> of an agent that will act on your behalf.</p>
+<div class="bg-rose-900/30 border border-rose-500/30 rounded-xl p-5 mb-4">
+<div class="text-rose-400 font-semibold mb-3">The 4 Planning Dimensions</div>
+<div class="space-y-2 text-sm text-gray-300">
+<div class="flex gap-3"><span class="w-8 h-8 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-xs flex-shrink-0">1</span>Functional scope: what the assistant CAN and CANNOT do</div>
+<div class="flex gap-3"><span class="w-8 h-8 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-xs flex-shrink-0">2</span>Identity: who the assistant is, its values, and its communication style</div>
+<div class="flex gap-3"><span class="w-8 h-8 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-xs flex-shrink-0">3</span>Architecture: which Claw pattern and which components are needed</div>
+<div class="flex gap-3"><span class="w-8 h-8 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-xs flex-shrink-0">4</span>Roadmap: sequence of steps to build from the MVP to the complete assistant</div>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">2</span>
+<h2 class="text-2xl font-bold text-white">Why Plan Before Coding?</h2>
+</div>
+<p class="text-gray-300 mb-4">In AI systems, the cost of late changes is much higher than in traditional software. Changing the architecture after memory, tools, and channels have been configured may require complex migrations.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+<div class="text-rose-400 font-semibold mb-2">Decisions that are costly to change later</div>
+<ul class="text-gray-300 text-sm space-y-1">
+<li>· Memory database schema</li>
+<li>· SOUL.md format</li>
+<li>· Base Tools interface</li>
+<li>· Channel authentication standard</li>
+</ul>
+</div>
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+<div class="text-teal-400 font-semibold mb-2">Decisions that are easy to change</div>
+<ul class="text-gray-300 text-sm space-y-1">
+<li>· AI model used</li>
+<li>· SOUL.md communication style</li>
+<li>· Adding new Tools</li>
+<li>· Channel settings</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">3</span>
+<h2 class="text-2xl font-bold text-white">Defining Scope and Use Cases</h2>
+</div>
+<p class="text-gray-300 mb-4">Use the Jobs-to-be-Done technique to map what you want to delegate to the assistant. Be specific: "manage my email" is vague; "filter and categorize work emails, automatically responding to scheduling requests" is a concrete job.</p>
+<div class="bg-gray-800 rounded-xl p-5 mb-4">
+<div class="text-white font-semibold mb-3">Job Definition Template</div>
+<div class="font-mono text-sm text-gray-300 space-y-1">
+<div><span class="text-rose-400">WHEN</span> I receive a customer email requesting a meeting</div>
+<div><span class="text-rose-400">I WANT YOU TO</span> the assistant checks my calendar and suggests times</div>
+<div><span class="text-rose-400">WHY</span> I don’t have to do this triage manually</div>
+<div class="mt-2"><span class="text-rose-400">CONSTRAINTS:</span> never accept without my final approval</div>
+<div><span class="text-rose-400">CHANNEL:</span> Gmail + Google Calendar</div>
+<div><span class="text-rose-400">ARCHITECTURE:</span> IronClaw (sensitive data)</div>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">4</span>
+<h2 class="text-2xl font-bold text-white">Choosing the Right Claw Architecture</h2>
+</div>
+<p class="text-gray-300 mb-4">Use this decision tree to choose the right pattern based on your security, scale, and complexity requirements.</p>
+<div class="bg-rose-900/30 border border-rose-500/30 rounded-xl p-5 mb-4">
+<div class="font-mono text-sm text-gray-300 space-y-1">
+<div class="text-rose-400">Sensitive third-party data?</div>
+<div>  YES → <span class="text-white font-semibold">IronClaw</span></div>
+<div>  NO → continue...</div>
+<div class="mt-2 text-rose-400">Multiple specialized agents?</div>
+<div>  YES → <span class="text-white font-semibold">TinyClaw</span></div>
+<div>  NO → continue...</div>
+<div class="mt-2 text-rose-400">Should the system improve autonomously?</div>
+<div>  YES → <span class="text-white font-semibold">Agent Zero</span></div>
+<div>  NO → continue...</div>
+<div class="mt-2 text-rose-400">Offline or edge environment?</div>
+<div>  YES → <span class="text-white font-semibold">ZeroClaw</span> or <span class="text-white font-semibold">NanoClaw</span></div>
+<div>  NO → <span class="text-white font-semibold">OpenClaw</span> (use it and refine it later)</div>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">5</span>
+<h2 class="text-2xl font-bold text-white">Identity Design and SOUL.md</h2>
+</div>
+<p class="text-gray-300 mb-4">SOUL.md is the most important document for your assistant. Give it serious time — a well-defined identity prevents inconsistent behavior and out-of-context responses.</p>
+<div class="bg-gray-800 rounded-xl p-5 mb-4 font-mono text-sm">
+<div class="text-gray-500 mb-2"># SOUL.md template for final project</div>
+<div class="text-rose-400"># Identity</div>
+<div class="text-gray-300">Name: [YOUR ASSISTANT]</div>
+<div class="text-gray-300">Role: Personal assistant specialized in [YOUR CONTEXT]</div>
+<div class="mt-2 text-rose-400"># Personality</div>
+<div class="text-gray-300">Tone: [direct/formal/casual/technical]</div>
+<div class="text-gray-300">Strengths: [list the top 3-5]</div>
+<div class="mt-2 text-rose-400"># Values and Constraints</div>
+<div class="text-gray-300">Always: [required behaviors]</div>
+<div class="text-gray-300">Never: [prohibited behaviors]</div>
+<div class="mt-2 text-rose-400"># Context</div>
+<div class="text-gray-300">User: [who you are and your professional context]</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">6</span>
+<h2 class="text-2xl font-bold text-white">4-Phase Development Roadmap</h2>
+</div>
+<p class="text-gray-300 mb-4">Don't try to build everything at once. Follow the 4 evolutionary phases to get an assistant working quickly and improve it with real feedback.</p>
+<div class="space-y-3">
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4 flex gap-4">
+<span class="w-10 h-10 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold flex-shrink-0">1</span>
+<div>
+<div class="text-white font-semibold">MVP Phase (week 1-2)</div>
+<div class="text-gray-400 text-sm">One channel, one model, basic SOUL.md, no external tools. Focus: answering questions and maintaining context.</div>
+</div>
+</div>
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4 flex gap-4">
+<span class="w-10 h-10 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold flex-shrink-0">2</span>
+<div>
+<div class="text-white font-semibold">Core Phase (week 3-4)</div>
+<div class="text-gray-400 text-sm">Persistent memory, 2-3 essential tools, identity refinement based on real-world use.</div>
+</div>
+</div>
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4 flex gap-4">
+<span class="w-10 h-10 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold flex-shrink-0">3</span>
+<div>
+<div class="text-white font-semibold">Advanced Phase (month 2)</div>
+<div class="text-gray-400 text-sm">Multiple channels, automations, integrations with Google/GitHub, security hardening.</div>
+</div>
+</div>
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4 flex gap-4">
+<span class="w-10 h-10 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold flex-shrink-0">4</span>
+<div>
+<div class="text-white font-semibold">Autonomous Phase (month 3+)</div>
+<div class="text-gray-400 text-sm">Multi-agents, Agent Zero loop, automatic tool discovery, complete monitoring.</div>
+</div>
+</div>
+</div>
+</section>
+<div class="flex justify-start gap-3 mt-10 pt-8 border-t border-gray-800">
+<a class="px-5 py-2.5 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-medium transition-colors" href="index.html">← Back to Track 6</a>
+<a class="px-5 py-2.5 bg-rose-700 hover:bg-rose-600 text-white rounded-lg font-medium transition-colors" href="../../index.html">Course Conclusion</a>
+</div>
+</main>
+<footer class="border-t border-gray-800 py-6 mt-10">
+<div class="max-w-4xl mx-auto px-4 text-center text-sm text-gray-500">
+      INTELECTO Course · <a class="text-sky-400 hover:underline" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+</footer>
+<script>
+    
+  const html = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  if (localStorage.getItem('theme') === 'light') html.classList.add('light');
+  btn.addEventListener('click', () => {
+    html.classList.toggle('light');
+    localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
+  });
+
+  </script>
+</body>
+</html>

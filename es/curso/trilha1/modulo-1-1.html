@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 1.1 — Qué es INTELECTO | INTELECTO</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+  </style>
+<link href="https://inematds.github.io/intelecto-curso/curso/trilha1/modulo-1-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/en/curso/trilha1/modulo-1-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/es/curso/trilha1/modulo-1-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">INTELECTO</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html">T1 Fundamentos</a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Ruta 1</a>
+<span>/</span>
+<span class="text-emerald-400">Módulo 1.1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧠 Qué es el INTELECTO</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Filosofía de «sin frameworks inflados», el concepto de tienda de funciones, comparación con LangChain y CrewAI, y por qué tiene sentido construir desde cero en 2026.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">60</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Teoría</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Tópico 1 -->
+<section class="mb-16" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🤔 El problema de los frameworks inflados</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        En 2024, construir un asistente de IA se volvió sinónimo de instalar LangChain — un framework que nació para simplificar, pero creció tanto que hoy tiene <strong class="text-emerald-400">más de 200 dependencias directas</strong> y solo lleva minutos importar. El costo de abstracción, que debía ahorrar tiempo, se convirtió en una deuda técnica enorme.
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">📊</span> El costo real de la abstracción</h3>
+<p class="text-neutral-300 mb-4">Cada capa de abstracción que agregas tiene un costo. En el desarrollo ágil de IA, ese costo se manifiesta de tres formas concretas:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Tiempo de depuración multiplicado:</strong> Cuando algo falla dentro de una abstracción, depuras código que no escribiste</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Dependencia silenciosa del proveedor:</strong> Migrar de LangChain a otra solución requiere reescribir casi todo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span><strong>Rendimiento degradado:</strong> Las capas innecesarias agregan latencia real a las solicitudes</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold mb-4">📦 Comparación de tamaño</h3>
+<div class="font-mono text-sm space-y-2">
+<div class="flex justify-between items-center p-3 bg-red-900/20 rounded-lg border border-red-500/20">
+<span class="text-red-400">LangChain</span>
+<span class="text-neutral-400">~200+ dependencias · inicio lento · depuración compleja</span>
+</div>
+<div class="flex justify-between items-center p-3 bg-yellow-900/20 rounded-lg border border-yellow-500/20">
+<span class="text-yellow-400">CrewAI</span>
+<span class="text-neutral-400">~50 dependencias · modelo rígido · multiagentes forzados</span>
+</div>
+<div class="flex justify-between items-center p-3 bg-emerald-900/20 rounded-lg border border-emerald-500/20">
+<span class="text-emerald-400">INTELECTO</span>
+<span class="text-neutral-400">~5 dependencias · inicio instantáneo · 100% controlable</span>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Antes de adoptar cualquier framework, haz esta prueba: "¿Puedo explicar exactamente qué ocurre entre el mensaje del usuario y la respuesta de la IA?" Si la respuesta es no, tienes una caja negra, y las cajas negras en producción son peligrosas.</p>
+</div>
+</section>
+<!-- Tópico 2 -->
+<section class="mb-16" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🛒 El supermercado de funcionalidades</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        INTELECTO está organizado como una <strong class="text-emerald-400">mezcolanza de funcionalidades</strong>. Hay 8 corredores, cada uno con componentes independientes. Entras, tomas lo que necesitas y sales. Ningún componente obliga a instalar otro: cada uno tiene sus propias dependencias mínimas.
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🏪</span> Los 8 corredores</h3>
+<div class="grid grid-cols-2 gap-3">
+<div class="flex items-center space-x-2"><span>🧬</span><span class="text-sm">Identidad y Personalidad</span></div>
+<div class="flex items-center space-x-2"><span>🛡</span><span class="text-sm">Seguridad y protección</span></div>
+<div class="flex items-center space-x-2"><span>💬</span><span class="text-sm">Canales de comunicación</span></div>
+<div class="flex items-center space-x-2"><span>🧠</span><span class="text-sm">Memoria y conocimiento</span></div>
+<div class="flex items-center space-x-2"><span>⚙</span><span class="text-sm">Automatización y programación</span></div>
+<div class="flex items-center space-x-2"><span>🔗</span><span class="text-sm">Integraciones de LLMs</span></div>
+<div class="flex items-center space-x-2"><span>🧰</span><span class="text-sm">Skills y herramientas</span></div>
+<div class="flex items-center space-x-2"><span>🏗</span><span class="text-sm">Patrones de arquitectura</span></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Montaje mínimo</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Agent Loop (obligatorio)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>1 Provider (p. ej., OpenRouter)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>1 Canal (p. ej., Telegram)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>SOUL.md básico</span></li>
+</ul>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">+ Opcional según el caso de uso</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-blue-400">+</span><span>Memoria SQLite (si necesitas persistencia)</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">+</span><span>Seguridad de IronClaw (si hay exposición pública)</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">+</span><span>Google Workspace (si usas GSuite)</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">+</span><span>Cron (si necesitas proactividad)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Tópico 3 -->
+<section class="mb-16" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">⚔ INTELECTO vs LangChain vs CrewAI</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        La comparación honesta importa porque cada herramienta existe para un propósito diferente. <strong class="text-emerald-400">LangChain</strong> es excelente para crear prototipos rápidamente con chains predefinidas. <strong class="text-emerald-400">CrewAI</strong> brilla en pipelines de múltiples agentes con roles fijos. INTELECTO es para quien quiere un asistente personal real, personalizable y auditable.
+      </p>
+<div class="overflow-x-auto mb-6">
+<table class="w-full text-sm border-collapse">
+<thead>
+<tr class="border-b border-dark-600">
+<th class="text-left py-3 px-4 text-neutral-400">Criterio</th>
+<th class="text-center py-3 px-4 text-red-400">LangChain</th>
+<th class="text-center py-3 px-4 text-yellow-400">CrewAI</th>
+<th class="text-center py-3 px-4 text-emerald-400">INTELECTO</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-dark-700">
+<tr><td class="py-3 px-4 text-neutral-400">Dependencias</td><td class="py-3 px-4 text-center text-red-400">200+</td><td class="py-3 px-4 text-center text-yellow-400">~50</td><td class="py-3 px-4 text-center text-emerald-400">~5</td></tr>
+<tr><td class="py-3 px-4 text-neutral-400">Tiempo de inicio</td><td class="py-3 px-4 text-center text-red-400">Lento</td><td class="py-3 px-4 text-center text-yellow-400">Medio</td><td class="py-3 px-4 text-center text-emerald-400">Instantánea</td></tr>
+<tr><td class="py-3 px-4 text-neutral-400">Debug</td><td class="py-3 px-4 text-center text-red-400">Complejo</td><td class="py-3 px-4 text-center text-yellow-400">Medio</td><td class="py-3 px-4 text-center text-emerald-400">Directo</td></tr>
+<tr><td class="py-3 px-4 text-neutral-400">Personalización</td><td class="py-3 px-4 text-center text-yellow-400">Limitada</td><td class="py-3 px-4 text-center text-red-400">Rígida</td><td class="py-3 px-4 text-center text-emerald-400">Total</td></tr>
+<tr><td class="py-3 px-4 text-neutral-400">Seguridad nativa</td><td class="py-3 px-4 text-center text-red-400">No</td><td class="py-3 px-4 text-center text-red-400">No</td><td class="py-3 px-4 text-center text-emerald-400">IronClaw</td></tr>
+<tr><td class="py-3 px-4 text-neutral-400">Memoria persistente</td><td class="py-3 px-4 text-center text-yellow-400">Plugin</td><td class="py-3 px-4 text-center text-yellow-400">Básica</td><td class="py-3 px-4 text-center text-emerald-400">SQLite FTS5</td></tr>
+</tbody>
+</table>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Cuándo usar cada uno</h3>
+<p class="text-neutral-300">Usa LangChain para demos y pruebas de concepto rápidas. Usa CrewAI para pipelines de procesamiento con roles de agentes bien definidos. Usa INTELECTO cuando quieras un asistente personal que crezca contigo durante años, con control total y seguridad auditable.</p>
+</div>
+</section>
+<!-- Tópico 4 -->
+<section class="mb-16" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🎯 El concepto de Jarvis</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Tony Stark no usaba un chatbot: usaba un asistente que <strong class="text-emerald-400">conocía tus proyectos, tu agenda, tus hábitos</strong> y actuaba de forma proactiva. Jarvis no esperaba a que le preguntaran: monitoreaba, alertaba y ejecutaba. INTELECTO está diseñado para ese nivel de integración.
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🤖</span> Chatbot vs. asistente Jarvis</h3>
+<div class="space-y-4">
+<div class="flex items-start space-x-4">
+<div class="w-24 flex-shrink-0 text-center">
+<div class="bg-red-900/20 rounded-lg p-2 text-red-400 text-xs font-semibold">CHATBOT</div>
+</div>
+<div class="flex-1 text-sm text-neutral-300">Responde preguntas. Lo olvida todo cuando termina la conversación. No tiene identidad. No actúa en el mundo real. No te conoce.</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-24 flex-shrink-0 text-center">
+<div class="bg-emerald-900/20 rounded-lg p-2 text-emerald-400 text-xs font-semibold">JARVIS</div>
+</div>
+<div class="flex-1 text-sm text-neutral-300">Recuerda conversaciones pasadas. Conoce tu personalidad y tus valores. Actúa de forma proactiva. Ejecuta tareas reales (código, correo electrónico, calendario). Aprende con el tiempo.</div>
+</div>
+</div>
+</div>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold text-sm">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold mb-1">Identidad Persistente</h4>
+<p class="text-sm text-neutral-400">Jarvis tiene un nombre, un tono de voz y valores definidos en SOUL.md. Es coherente en todas las conversaciones y en todos los canales.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold text-sm">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold mb-1">Memoria a largo plazo</h4>
+<p class="text-sm text-neutral-400">SQLite FTS5 guarda hechos importantes extraídos automáticamente de cada conversación. "Sé que prefieres Python. Sé que tu plazo es el viernes."</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold text-sm">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold mb-1">Acción en el mundo real</h4>
+<p class="text-sm text-neutral-400">Herramientas reales: crear un evento en Google Calendar, hacer un commit en GitHub, enviar un correo electrónico, buscar en la web. No solo responder: ejecutar.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Tópico 5 -->
+<section class="mb-16" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📦 Archivos clave del proyecto</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        El repositorio INTELECTO tiene una estructura deliberada. Cada archivo tiene una única responsabilidad y un contrato claro. Conocer el mapa antes de sumergirte en el código ahorra horas de orientación perdida.
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4">🗂 Mapa del repositorio</h3>
+<div class="font-mono text-sm space-y-1">
+<div class="text-neutral-300">intelecto/</div>
+<div class="text-neutral-300 ml-4">agent/</div>
+<div class="text-emerald-400 ml-8">context.py <span class="text-neutral-500">← crea el system prompt con workspace/</span></div>
+<div class="text-emerald-400 ml-8">loop.py <span class="text-neutral-500">← core: recibe → piensa → responde (max 5 rounds)</span></div>
+<div class="text-neutral-300 ml-4">security/</div>
+<div class="text-emerald-400 ml-8">secrets.py <span class="text-neutral-500">← Fernet + PBKDF2 con UUID del hardware</span></div>
+<div class="text-emerald-400 ml-8">safety.py <span class="text-neutral-500">← blocklist + path traversal + audit log</span></div>
+<div class="text-neutral-300 ml-4">memory/</div>
+<div class="text-emerald-400 ml-8">store.py <span class="text-neutral-500">← SQLite FTS5 + BM25 + deduplicación</span></div>
+<div class="text-neutral-300 ml-4">providers/</div>
+<div class="text-emerald-400 ml-8">base.py <span class="text-neutral-500">← interfaz abstracta async chat()</span></div>
+<div class="text-neutral-300 ml-4">channels/</div>
+<div class="text-emerald-400 ml-8">base.py <span class="text-neutral-500">← contrato start(), send(), stop()</span></div>
+<div class="text-neutral-300 ml-4">tools/</div>
+<div class="text-emerald-400 ml-8">base.py <span class="text-neutral-500">← name, description, parameters, execute()</span></div>
+<div class="text-neutral-300">workspace/</div>
+<div class="text-blue-400 ml-4">SOUL.md <span class="text-neutral-500">← personalidad de la IA</span></div>
+<div class="text-blue-400 ml-4">AGENTS.md <span class="text-neutral-500">← reglas de comportamiento</span></div>
+<div class="text-blue-400 ml-4">MEMORY.md <span class="text-neutral-500">← hechos de bootstrap</span></div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Regla de oro de la estructura</h3>
+<p class="text-neutral-300">Si necesitas una nueva funcionalidad, la pregunta es: "¿En qué módulo corresponde?" Nunca mezcles responsabilidades. Un canal nunca accede directamente a la memoria: pasa por la interfaz del agente. Esa disciplina es lo que mantiene el sistema comprensible a medida que crece.</p>
+</div>
+</section>
+<!-- Tópico 6 -->
+<section class="mb-16" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🚀 Por qué construir desde cero en 2026</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+        Las API de LLM han madurado. Las interfaces de Anthropic, OpenAI y Mistral son estables y están bien documentadas. El <strong class="text-emerald-400">costo de abstraer sobre estas API</strong> — que era justificable cuando cambiaban cada semana — ya no se justifica para proyectos serios con plazos de años.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Ventajas de construir desde cero</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>100% de control sobre el comportamiento</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Debug directo sin intermediarios</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Cero dependencias innecesarias</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Seguridad auditable en cada línea</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Rendimiento optimizable según el caso de uso</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Costos que asumes</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Más código inicial que escribir</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sin recetas listas para usar de frameworks</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Curva de aprendizaje más larga</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Tú mantienes la infraestructura</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📈</span> El argumento definitivo</h3>
+<p class="text-neutral-300">En 2026, el mercado está saturado de desarrolladores que saben usar wrappers. Son pocos los que entienden los fundamentos. Un asistente de IA bien construido, con seguridad real y memoria persistente, es un activo personal que durará años — y vale la inversión inicial de construirlo bien.</p>
+</div>
+</section>
+<!-- Resumo -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del Módulo 1.1</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Frameworks inflados</strong><span class="text-neutral-400"> — El costo de abstracción de LangChain y CrewAI supera los beneficios para proyectos serios</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Tienda de funcionalidades</strong><span class="text-neutral-400"> — 8 corredores independientes; tomas solo lo que necesitas</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Comparación honesta</strong><span class="text-neutral-400"> — INTELECTO ofrece más personalización y seguridad; los frameworks, prototipado rápido</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Concepto Jarvis</strong><span class="text-neutral-400"> — Identidad persistente, memoria a largo plazo y acción real en el mundo</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Mapa del repositorio</strong><span class="text-neutral-400"> — 8 archivos clave, cada uno con una responsabilidad única y un contrato claro</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong>Por qué 2026</strong><span class="text-neutral-400"> — APIs maduras, alto costo de abstracción, una ventaja competitiva real para quien entiende los fundamentos</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">1.2 — Arquitectura general: cómo se conectan los 5 componentes y el flujo completo de un mensaje</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la Ruta 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-2.html">Próximo módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>INTELECTO — Módulo 1.1: Qué es INTELECTO · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { themeToggleDarkIcon.classList.remove('hidden'); html.classList.remove('dark'); }
+    else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

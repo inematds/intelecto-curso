@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 6.2 — Deployment, Monitoring, and Evolution | INTELECTO</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+
+  .light body { background-color: #f8fafc; color: #1e293b; }
+  .light .bg-gray-900 { background-color: #ffffff !important; }
+  .light .bg-gray-800 { background-color: #f1f5f9 !important; }
+  .light .bg-gray-700 { background-color: #e2e8f0 !important; }
+  .light .text-white { color: #1e293b !important; }
+  .light .text-gray-100 { color: #1e293b !important; }
+  .light .text-gray-200 { color: #334155 !important; }
+  .light .text-gray-300 { color: #475569 !important; }
+  .light .text-gray-400 { color: #64748b !important; }
+  .light .border-gray-700 { border-color: #e2e8f0 !important; }
+  .light .border-gray-600 { border-color: #cbd5e1 !important; }
+  .light .bg-rose-900\/30 { background-color: rgba(244,63,94,0.1) !important; }
+  .light .bg-rose-500\/10 { background-color: rgba(244,63,94,0.08) !important; }
+  .light .border-rose-500\/30 { border-color: rgba(244,63,94,0.3) !important; }
+  .light .hover\:bg-rose-900\/30:hover { background-color: rgba(244,63,94,0.1) !important; }
+
+  </style>
+<link href="https://inematds.github.io/intelecto-curso/curso/trilha6/modulo-6-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/en/curso/trilha6/modulo-6-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/intelecto-curso/es/curso/trilha6/modulo-6-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-gray-900 text-white min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-6-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha6/modulo-6-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur sticky top-0 z-40">
+<div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="index.html">← Track 6</a>
+<span class="text-gray-600">|</span>
+<span class="text-rose-400 font-semibold">Module 6.2</span>
+</div>
+<button class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 transition-colors" id="themeToggle">☀️/🌙</button>
+</div>
+</header>
+<div class="bg-gradient-to-br from-rose-900/40 to-gray-900 border-b border-gray-800 py-10">
+<div class="max-w-4xl mx-auto px-4">
+<span class="text-rose-400 text-sm font-semibold uppercase tracking-wider">Module 6.2</span>
+<h1 class="text-3xl font-bold text-white mt-2 mb-3">Deploy, Monitoring, and Evolution</h1>
+<p class="text-gray-300 text-lg">Taking your assistant to production with robust deployment, observability, and a continuous improvement cycle.</p>
+</div>
+</div>
+<main class="max-w-4xl mx-auto px-4 py-10">
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">1</span>
+<h2 class="text-2xl font-bold text-white">What Is AI Assistant Deployment?</h2>
+</div>
+<p class="text-gray-300 mb-4">Deploying an AI assistant is different from deploying a REST API. You’re not just making an endpoint available — you’re putting a <strong class="text-white">autonomous agent in production</strong> that makes decisions and acts on your behalf.</p>
+<div class="bg-rose-900/30 border border-rose-500/30 rounded-xl p-5 mb-4">
+<div class="text-rose-400 font-semibold mb-3">Difference: Dev vs. Production in AI</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm">
+<thead><tr class="text-gray-400 border-b border-gray-700">
+<th class="text-left py-2 pr-4">Aspect</th>
+<th class="text-left py-2 pr-4">Development</th>
+<th class="text-left py-2">Production</th>
+</tr></thead>
+<tbody class="text-gray-300">
+<tr class="border-b border-gray-800"><td class="py-2 pr-4">Errors</td><td class="pr-4">You see and fix</td><td>User sees first</td></tr>
+<tr class="border-b border-gray-800"><td class="py-2 pr-4">Latency</td><td class="pr-4">Irrelevant</td><td>Critical (&lt;3s ideal)</td></tr>
+<tr class="border-b border-gray-800"><td class="py-2 pr-4">Cost</td><td class="pr-4">Small</td><td>Can scale quickly</td></tr>
+<tr><td class="py-2 pr-4">Security</td><td class="pr-4">Relaxed</td><td>Always IronClaw</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">2</span>
+<h2 class="text-2xl font-bold text-white">Why Is Monitoring So Important?</h2>
+</div>
+<p class="text-gray-300 mb-4">AI systems suffer from <strong class="text-white">drift</strong> — behavior can change subtly over time due to changes in the model, context, or data. Without monitoring, you don't know when the assistant started making mistakes.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+<div class="text-rose-400 font-semibold mb-2">Common Causes of Degradation</div>
+<ul class="text-gray-300 text-sm space-y-1">
+<li>· Base model update by the provider</li>
+<li>· Excessive memory growth</li>
+<li>· Changes to integrated external APIs</li>
+<li>· Context window overflow in long chats</li>
+</ul>
+</div>
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+<div class="text-teal-400 font-semibold mb-2">Warning Signs to Monitor</div>
+<ul class="text-gray-300 text-sm space-y-1">
+<li>· Increased tool retries</li>
+<li>· Average latency above baseline</li>
+<li>· Drop in the user's thumbs-up rate</li>
+<li>· Frequent 429 errors (rate limit)</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">3</span>
+<h2 class="text-2xl font-bold text-white">Deployment Strategies</h2>
+</div>
+<p class="text-gray-300 mb-4">Each deployment strategy has trade-offs in cost, control, and complexity. Choose based on your comfort level with infrastructure.</p>
+<div class="space-y-3 mb-4">
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+<div class="flex justify-between items-start mb-2">
+<div class="text-white font-semibold">VPS (Hetzner, DigitalOcean)</div>
+<span class="text-xs px-2 py-0.5 bg-teal-500/20 text-teal-400 rounded-full">Recommended</span>
+</div>
+<div class="text-gray-400 text-sm">Full control, predictable cost (~€5-20/month), systemd for uptime. Ideal for IronClaw and sensitive data.</div>
+</div>
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+<div class="text-white font-semibold mb-2">Railway / Render</div>
+<div class="text-gray-400 text-sm">Deploy with git push, zero server configuration. Ideal for prototypes and OpenClaw. Variable cost based on usage.</div>
+</div>
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-4">
+<div class="text-white font-semibold mb-2">Docker + Compose</div>
+<div class="text-gray-400 text-sm">Reproducible environment, easy version rollback. Run on any VPS or local machine with one command.</div>
+</div>
+</div>
+<div class="bg-gray-800 rounded-xl p-4 font-mono text-sm">
+<div class="text-gray-500 mb-2"># deploy with systemd</div>
+<div class="text-gray-300">sudo systemctl enable intelecto</div>
+<div class="text-gray-300">sudo systemctl start intelecto</div>
+<div class="text-gray-300">sudo journalctl -u intelecto -f</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">4</span>
+<h2 class="text-2xl font-bold text-white">Observability and Metrics</h2>
+</div>
+<p class="text-gray-300 mb-4">An assistant in production needs structured logs, business metrics, and automatic alerts. INTELECTO includes a configurable observability module.</p>
+<div class="bg-gray-800 rounded-xl p-5 mb-4 font-mono text-sm">
+<div class="text-gray-500 mb-2"># observability.py — structured logging</div>
+<div class="text-blue-400">import</div><span class="text-gray-300"> structlog</span>
+<div class="text-gray-300">log = structlog.get_logger()</div>
+<div class="text-gray-300 mt-2">log.info("request_processed",</div>
+<div class="text-gray-300">  user_id=user.id,</div>
+<div class="text-gray-300">  duration_ms=elapsed,</div>
+<div class="text-gray-300">  tokens_used=response.usage.total,</div>
+<div class="text-gray-300">  tools_called=[t.name for t in tools],</div>
+<div class="text-gray-300">  success=True</div>
+<div class="text-gray-300">)</div>
+</div>
+<div class="bg-rose-900/30 border border-rose-500/30 rounded-xl p-4">
+<div class="text-rose-400 font-semibold mb-2">Recommended dashboards</div>
+<div class="text-gray-300 text-sm">Grafana + Prometheus for a self-hosted VPS. Or simply a JSON metrics file checked by a daily health check script.</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">5</span>
+<h2 class="text-2xl font-bold text-white">Continuous Improvement Cycle</h2>
+</div>
+<p class="text-gray-300 mb-4">No ready-made assistant exists. The improvement cycle turns real-world usage feedback into systematic improvements—without breaking what already works.</p>
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-5 mb-4">
+<div class="text-white font-semibold mb-3">Recommended Weekly Cycle</div>
+<div class="space-y-3">
+<div class="flex gap-3 items-start">
+<span class="w-7 h-7 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-xs flex-shrink-0">1</span>
+<div class="text-gray-300 text-sm"><span class="text-white font-medium">Review logs</span> — identify the 3 interactions with the most retries or errors</div>
+</div>
+<div class="flex gap-3 items-start">
+<span class="w-7 h-7 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-xs flex-shrink-0">2</span>
+<div class="text-gray-300 text-sm"><span class="text-white font-medium">Categorize Failures</span> — SOUL.md, Tool, Model, Memory, or Channel?</div>
+</div>
+<div class="flex gap-3 items-start">
+<span class="w-7 h-7 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-xs flex-shrink-0">3</span>
+<div class="text-gray-300 text-sm"><span class="text-white font-medium">Fix the most impactful issue</span> — one change at a time, with testing before deploy</div>
+</div>
+<div class="flex gap-3 items-start">
+<span class="w-7 h-7 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold text-xs flex-shrink-0">4</span>
+<div class="text-gray-300 text-sm"><span class="text-white font-medium">Measure the impact</span> — compare metrics before and after for 48h</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<div class="flex items-center gap-3 mb-5">
+<span class="w-8 h-8 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 font-bold text-sm">6</span>
+<h2 class="text-2xl font-bold text-white">Next Steps and INEMA.CLUB Community</h2>
+</div>
+<p class="text-gray-300 mb-4">Congratulations on completing the INTELECTO course! You now have the fundamentals to build, deploy, and evolve your personal assistant. The next step is to put it into practice — nothing replaces learning through real-world use.</p>
+<div class="bg-rose-900/30 border border-rose-500/30 rounded-xl p-5 mb-5">
+<div class="text-rose-400 font-semibold mb-3">Your Next 30 Days</div>
+<div class="space-y-2 text-sm text-gray-300">
+<div class="flex gap-2"><span class="text-rose-400 font-bold">Week 1:</span> MVP running on your main channel</div>
+<div class="flex gap-2"><span class="text-rose-400 font-bold">Week 2:</span> Persistent memory + 2 custom tools</div>
+<div class="flex gap-2"><span class="text-rose-400 font-bold">Week 3:</span> Deploy on a VPS with systemd and monitoring</div>
+<div class="flex gap-2"><span class="text-rose-400 font-bold">Week 4:</span> First round of improvements based on real logs</div>
+</div>
+</div>
+<div class="bg-gray-800 border border-gray-700 rounded-xl p-5">
+<div class="text-white font-semibold mb-3">Community and Resources</div>
+<div class="space-y-2 text-sm text-gray-300">
+<div>· <a class="text-sky-400 hover:underline" href="https://inema.club" target="_blank">INEMA.CLUB</a> — central hub for applied AI courses and projects</div>
+<div>· INTELECTO repository on GitHub — contribute Tools and Channels</div>
+<div>· Share your assistant — SOUL.md templates help the community</div>
+<div>· INEMA Discord — technical support and project collaboration</div>
+</div>
+</div>
+</section>
+<div class="flex justify-start gap-3 mt-10 pt-8 border-t border-gray-800">
+<a class="px-5 py-2.5 bg-gray-700 hover:bg-gray-600 text-white rounded-lg font-medium transition-colors" href="index.html">← Back to Track 6</a>
+<a class="px-5 py-2.5 bg-rose-700 hover:bg-rose-600 text-white rounded-lg font-medium transition-colors" href="../../index.html">Course Conclusion</a>
+</div>
+</main>
+<footer class="border-t border-gray-800 py-6 mt-10">
+<div class="max-w-4xl mx-auto px-4 text-center text-sm text-gray-500">
+      INTELECTO Course · <a class="text-sky-400 hover:underline" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+</footer>
+<script>
+    
+  const html = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  if (localStorage.getItem('theme') === 'light') html.classList.add('light');
+  btn.addEventListener('click', () => {
+    html.classList.toggle('light');
+    localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
+  });
+
+  </script>
+</body>
+</html>
